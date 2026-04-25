@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+
+
+<html class="dark" lang="en"><head>
+
+<meta charset="utf-8"/>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>NexGen Spares - Spares Shop Details</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+
+        tailwind.config = {
+
+            darkMode: "class",
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        "on-tertiary-fixed-variant": "#4b546d",
+
+                        "on-background": "#dee5ff",
+
+                        "surface-container-highest": "#00225a",
+
+                        "background": "#060e20",
+
+                        "on-primary": "#28329c",
+
+                        "surface-tint": "#bdc2ff",
+
+                        "error-dim": "#b95463",
+
+                        "on-surface": "#dee5ff",
+
+                        "on-primary-fixed": "#27319b",
+
+                        "on-surface-variant": "#91aaeb",
+
+                        "on-primary-fixed-variant": "#4650b9",
+
+                        "on-error-container": "#ff97a3",
+
+                        "primary-fixed": "#e0e0ff",
+
+                        "surface-bright": "#002867",
+
+                        "on-secondary-container": "#c1bec3",
+
+                        "error-container": "#7f2737",
+
+                        "secondary-fixed": "#e5e1e6",
+
+                        "primary-dim": "#acb3ff",
+
+                        "tertiary-container": "#ced6f5",
+
+                        "surface-container-lowest": "#000000",
+
+                        "surface-container": "#05183c",
+
+                        "tertiary-fixed-dim": "#c0c9e6",
+
+                        "tertiary": "#dee5ff",
+
+                        "on-secondary": "#202023",
+
+                        "error": "#ec7c8a",
+
+                        "secondary-dim": "#9f9da1",
+
+                        "on-error": "#490013",
+
+                        "tertiary-dim": "#c0c9e6",
+
+                        "inverse-surface": "#faf8ff",
+
+                        "on-secondary-fixed-variant": "#5c5b5f",
+
+                        "outline": "#5b74b1",
+
+                        "secondary-fixed-dim": "#d6d3d8",
+
+                        "primary-fixed-dim": "#ced1ff",
+
+                        "on-secondary-fixed": "#403f43",
+
+                        "surface-variant": "#00225a",
+
+                        "primary": "#bdc2ff",
+
+                        "surface": "#060e20",
+
+                        "outline-variant": "#2b4680",
+
+                        "inverse-on-surface": "#4d556b",
+
+                        "on-tertiary-fixed": "#2f384f",
+
+                        "on-tertiary": "#4a536c",
+
+                        "surface-dim": "#060e20",
+
+                        "surface-container-low": "#06122d",
+
+                        "surface-container-high": "#031d4b",
+
+                        "on-primary-container": "#c9cdff",
+
+                        "on-tertiary-container": "#424a63",
+
+                        "inverse-primary": "#4954bc",
+
+                        "secondary": "#9f9da1",
+
+                        "primary-container": "#2f3aa3",
+
+                        "tertiary-fixed": "#ced6f5",
+
+                        "secondary-container": "#3c3b3f"
+
+                    },
+
+                    borderRadius: {
+
+                        "DEFAULT": "0.25rem",
+
+                        "lg": "0.5rem",
+
+                        "xl": "0.75rem",
+
+                        "full": "9999px"
+
+                    },
+
+                    spacing: {},
+
+                    fontFamily: {
+
+                        headline: ["Manrope", "sans-serif"],
+
+                        body: ["Inter", "sans-serif"],
+
+                        label: ["Inter", "sans-serif"]
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+<style>
+
+        .material-symbols-outlined {
+
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+
+        }
+
+        
+
+        .ghost-border {
+
+            box-shadow: inset 0 0 0 1px rgba(43, 70, 128, 0.2);
+
+        }
+
+        
+
+        .ambient-shadow {
+
+            box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.2);
+
+        }
+
+        
+
+        .glass-panel {
+
+            background-color: rgba(5, 24, 60, 0.7);
+
+            backdrop-filter: blur(20px);
+
+            -webkit-backdrop-filter: blur(20px);
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+
+<!-- SideNavBar (Suppressed based on Semantic Shell Mandate - Details Screen) -->
+
+<!-- Main Content Canvas -->
+
+<main class="flex-1 flex flex-col w-full h-screen overflow-hidden">
+
+<!-- TopNavBar (Suppressed based on Semantic Shell Mandate - Details Screen) -->
+
+<!-- Contextual Header for Detail Screen -->
+
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md px-8 py-6 flex items-center justify-between">
+
+<div class="flex items-center gap-6">
+
+<button aria-label="Go back" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors ghost-border text-on-surface-variant hover:text-on-surface">
+
+<span class="material-symbols-outlined">arrow_back</span>
+
+</button>
+
+<div>
+
+<div class="flex items-center gap-3 mb-1">
+
+<span class="px-2 py-0.5 rounded text-[10px] font-label font-medium uppercase tracking-wider bg-surface-container-high text-on-surface-variant">Spares Shop ID: S-9924-NEX</span>
+
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label font-semibold uppercase tracking-wider bg-primary-container/30 text-primary border border-primary/20">Active Partner</span>
+
+</div>
+
+<h1 class="font-headline font-bold text-2xl tracking-tight text-on-surface flex items-center gap-3">
+
+                        NexGen Spares
+
+                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+
+</h1>
+
+</div>
+
+</div>
+
+<div class="flex items-center gap-3">
+
+<button class="h-10 px-4 rounded-lg font-label font-medium text-sm flex items-center gap-2 bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high ghost-border transition-colors">
+
+<span class="material-symbols-outlined text-[18px]">download</span>
+
+                    Export Data
+
+                </button>
+
+<button class="h-10 px-5 rounded-lg font-label font-medium text-sm flex items-center gap-2 bg-gradient-to-br from-primary to-primary-container text-on-primary hover:opacity-90 transition-opacity">
+
+<span class="material-symbols-outlined text-[18px]">mail</span>
+
+                    Message Spares Shop
+
+                </button>
+
+</div>
+
+</header>
+
+<!-- Scrollable Content Area -->
+
+<div class="flex-1 overflow-y-auto px-8 pb-12 pt-2">
+
+<!-- Spares Shop Health / KPI Bento Grid -->
+
+<section class="grid grid-cols-12 gap-6 mb-8">
+
+<!-- Main Metric -->
+
+<div class="col-span-12 md:col-span-4 bg-surface-container rounded-xl p-6 relative overflow-hidden flex flex-col justify-between min-h-[140px]">
+
+<div class="absolute top-0 right-0 p-4 opacity-10">
+
+<span class="material-symbols-outlined text-[120px] leading-none">account_balance_wallet</span>
+
+</div>
+
+<h3 class="font-label text-xs uppercase tracking-wider text-on-surface-variant mb-2 relative z-10">Total Revenue (YTD)</h3>
+
+<div class="relative z-10">
+
+<div class="font-headline font-bold text-4xl text-on-surface mb-1">R1.42M</div>
+
+<div class="flex items-center gap-1 text-xs font-label">
+
+<span class="text-[#8cd69b] flex items-center bg-[#8cd69b]/10 px-1.5 py-0.5 rounded">
+
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+
+                                +12.4%
+
+                            </span>
+
+<span class="text-on-surface-variant ml-1">vs last quarter</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Secondary Metrics -->
+
+<div class="col-span-12 md:col-span-8 grid grid-cols-3 gap-6">
+
+<div class="bg-surface-container-low rounded-xl p-5 flex flex-col justify-between">
+
+<div class="flex justify-between items-start mb-4">
+
+<h3 class="font-label text-xs uppercase tracking-wider text-on-surface-variant">Active Orders</h3>
+
+<span class="material-symbols-outlined text-primary/50">shopping_cart</span>
+
+</div>
+
+<div>
+
+<div class="font-headline font-bold text-2xl text-on-surface">342</div>
+
+<div class="text-xs font-label text-on-surface-variant mt-1">Requiring action: <span class="text-error font-medium">12</span></div>
+
+</div>
+
+</div>
+
+<div class="bg-surface-container-low rounded-xl p-5 flex flex-col justify-between">
+
+<div class="flex justify-between items-start mb-4">
+
+<h3 class="font-label text-xs uppercase tracking-wider text-on-surface-variant">Fulfillment Rate</h3>
+
+<span class="material-symbols-outlined text-primary/50">local_shipping</span>
+
+</div>
+
+<div>
+
+<div class="font-headline font-bold text-2xl text-on-surface">98.2%</div>
+
+<div class="text-xs font-label text-on-surface-variant mt-1">SLA Target: 95.0%</div>
+
+</div>
+
+</div>
+
+<div class="bg-surface-container-low rounded-xl p-5 flex flex-col justify-between">
+
+<div class="flex justify-between items-start mb-4">
+
+<h3 class="font-label text-xs uppercase tracking-wider text-on-surface-variant">Quality Score</h3>
+
+<span class="material-symbols-outlined text-primary/50">star</span>
+
+</div>
+
+<div>
+
+<div class="font-headline font-bold text-2xl text-on-surface">4.8/5</div>
+
+<div class="text-xs font-label text-on-surface-variant mt-1">Based on 1,204 reviews</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Tabs Navigation -->
+
+<div class="flex items-center gap-6 border-b border-outline-variant/30 mb-6 px-2">
+
+<button class="pb-3 text-sm font-label font-medium text-on-surface-variant hover:text-on-surface transition-colors">Overview</button>
+
+<button class="pb-3 text-sm font-label font-medium text-on-surface-variant hover:text-on-surface transition-colors">Catalog</button>
+
+<button class="pb-3 text-sm font-label font-medium text-primary border-b-2 border-primary transition-colors flex items-center gap-2">
+
+                    Orders
+
+                    <span class="bg-surface-container-high text-on-surface text-[10px] px-1.5 py-0.5 rounded-full">342</span>
+
+</button>
+
+<button class="pb-3 text-sm font-label font-medium text-on-surface-variant hover:text-on-surface transition-colors">Financials</button>
+
+<button class="pb-3 text-sm font-label font-medium text-on-surface-variant hover:text-on-surface transition-colors">Settings</button>
+
+</div>
+
+<!-- Orders Tab Content -->
+
+<section class="bg-surface-container-low rounded-xl overflow-hidden min-h-[500px] flex flex-col">
+
+<!-- Table Toolbar -->
+
+<div class="p-4 flex items-center justify-between bg-surface-container-low border-b border-surface/50">
+
+<div class="flex items-center gap-3">
+
+<div class="relative">
+
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+
+<input class="w-64 h-9 bg-surface-container ghost-border rounded-lg pl-9 pr-4 text-sm font-label text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all" placeholder="Search by Order ID, part, or vehicle..." type="text"/>
+
+</div>
+
+<button class="h-9 px-3 rounded-lg font-label font-medium text-xs flex items-center gap-2 bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+
+                            Status
+
+                        </button>
+
+<button class="h-9 px-3 rounded-lg font-label font-medium text-xs flex items-center gap-2 bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">
+
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+
+                            Date
+
+                        </button>
+
+</div>
+
+<div class="flex items-center gap-2 text-xs font-label text-on-surface-variant">
+
+<span>Showing 1-10 of 342</span>
+
+<div class="flex items-center gap-1 ml-2">
+
+<button class="w-7 h-7 rounded flex items-center justify-center hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+
+</button>
+
+<button class="w-7 h-7 rounded flex items-center justify-center hover:bg-surface-container transition-colors">
+
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Data Table (Zero-Divider Rule Applied via Tonal Shifts) -->
+
+<div class="flex-1 overflow-x-auto">
+
+<table class="w-full text-left border-collapse">
+
+<thead>
+
+<tr class="bg-surface-container/50">
+
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant py-3 px-6 font-semibold w-12 text-center">
+
+<input class="rounded bg-surface-dim border-outline-variant text-primary focus:ring-primary/50" type="checkbox"/>
+
+</th>
+
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant py-3 px-6 font-semibold">Order ID</th>
+
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant py-3 px-6 font-semibold">Customer</th>
+
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant py-3 px-6 font-semibold">Parts</th>
+
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant py-3 px-6 font-semibold">Vehicle</th>
+
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant py-3 px-6 font-semibold text-right">Items Count</th>
+
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant py-3 px-6 font-semibold text-right">Total</th>
+
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant py-3 px-6 font-semibold">Order Status</th>
+
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant py-3 px-6 font-semibold">Fulfillment Status</th>
+
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant py-3 px-6 font-semibold">Date</th>
+
+<th class="font-label text-xs uppercase tracking-wider text-on-surface-variant py-3 px-6 font-semibold text-right">Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody class="font-label text-sm text-on-surface divide-y divide-transparent">
+
+<!-- Row 1 -->
+
+<tr class="hover:bg-surface-variant/50 transition-colors group">
+
+<td class="py-4 px-6 text-center">
+
+<input class="rounded bg-surface-dim border-outline-variant text-primary focus:ring-primary/50" type="checkbox"/>
+
+</td>
+
+<td class="py-4 px-6 font-medium font-headline">ORD-2023-8891</td>
+
+<td class="py-4 px-6 text-on-surface">Sipho Ndlovu</td>
+
+<td class="py-4 px-6 text-on-surface-variant">Brake Pads</td>
+
+<td class="py-4 px-6 text-on-surface-variant">Toyota Hilux</td>
+
+<td class="py-4 px-6 text-right font-medium">12</td>
+
+<td class="py-4 px-6 text-right font-headline font-semibold">R12,450.00</td>
+
+<td class="py-4 px-6">
+
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[#8cd69b]/10 text-[#8cd69b]">
+
+<span class="w-1.5 h-1.5 rounded-full bg-[#8cd69b]"></span>
+
+                                        Processed
+
+                                    </span>
+
+</td>
+
+<td class="py-4 px-6">
+
+<div class="flex items-center gap-2">
+
+<span class="material-symbols-outlined text-[16px] text-[#8cd69b]">local_shipping</span>
+
+<span class="text-xs">In Transit</span>
+
+</div>
+
+</td>
+
+<td class="py-4 px-6 text-on-surface-variant">Oct 24, 2023 <span class="text-xs block opacity-70">14:32 SAST</span></td>
+
+<td class="py-4 px-6 text-right relative">
+
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors opacity-0 group-hover:opacity-100 peer">
+
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+
+</button>
+
+<div class="absolute right-6 top-full mt-1 w-40 bg-surface-container-high rounded-lg shadow-xl border border-outline-variant/30 hidden peer-hover:block hover:block z-50 py-1">
+
+<button class="w-full text-left px-4 py-2 text-sm text-on-surface hover:bg-surface-variant transition-colors">View Order</button>
+
+<button class="w-full text-left px-4 py-2 text-sm text-on-surface hover:bg-surface-variant transition-colors">Fulfill Order</button>
+
+<button class="w-full text-left px-4 py-2 text-sm text-on-surface hover:bg-surface-variant transition-colors">Add Note</button>
+
+</div>
+
+</td>
+
+</tr>
+
+<!-- Row 2 (Risk State) -->
+
+<tr class="hover:bg-surface-variant/50 transition-colors group bg-error-container/10">
+
+<td class="py-4 px-6 text-center">
+
+<input class="rounded bg-surface-dim border-outline-variant text-primary focus:ring-primary/50" type="checkbox"/>
+
+</td>
+
+<td class="py-4 px-6 font-medium font-headline">ORD-2023-8890</td>
+
+<td class="py-4 px-6 text-on-surface">Thabo Mbeki</td>
+
+<td class="py-4 px-6 text-on-surface-variant">Alternator</td>
+
+<td class="py-4 px-6 text-on-surface-variant">VW Polo</td>
+
+<td class="py-4 px-6 text-right font-medium">3</td>
+
+<td class="py-4 px-6 text-right font-headline font-semibold">R3,200.00</td>
+
+<td class="py-4 px-6">
+
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-error-container text-on-error-container">
+
+<span class="w-1.5 h-1.5 rounded-full bg-on-error-container"></span>
+
+                                        Payment Failed
+
+                                    </span>
+
+</td>
+
+<td class="py-4 px-6">
+
+<div class="flex items-center gap-2 opacity-50">
+
+<span class="material-symbols-outlined text-[16px]">pending_actions</span>
+
+<span class="text-xs">On Hold</span>
+
+</div>
+
+</td>
+
+<td class="py-4 px-6 text-on-surface-variant">Oct 24, 2023 <span class="text-xs block opacity-70">09:15 SAST</span></td>
+
+<td class="py-4 px-6 text-right relative">
+
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors opacity-0 group-hover:opacity-100 peer">
+
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+
+</button>
+
+<div class="absolute right-6 top-full mt-1 w-40 bg-surface-container-high rounded-lg shadow-xl border border-outline-variant/30 hidden peer-hover:block hover:block z-50 py-1">
+
+<button class="w-full text-left px-4 py-2 text-sm text-on-surface hover:bg-surface-variant transition-colors">View Order</button>
+
+<button class="w-full text-left px-4 py-2 text-sm text-on-surface hover:bg-surface-variant transition-colors">Fulfill Order</button>
+
+<button class="w-full text-left px-4 py-2 text-sm text-on-surface hover:bg-surface-variant transition-colors">Add Note</button>
+
+</div>
+
+</td>
+
+</tr>
+
+<!-- Row 3 -->
+
+<tr class="hover:bg-surface-variant/50 transition-colors group">
+
+<td class="py-4 px-6 text-center">
+
+<input class="rounded bg-surface-dim border-outline-variant text-primary focus:ring-primary/50" type="checkbox"/>
+
+</td>
+
+<td class="py-4 px-6 font-medium font-headline">ORD-2023-8885</td>
+
+<td class="py-4 px-6 text-on-surface">Pieter van der Merwe</td>
+
+<td class="py-4 px-6 text-on-surface-variant">Fuel Filter</td>
+
+<td class="py-4 px-6 text-on-surface-variant">Ford Ranger</td>
+
+<td class="py-4 px-6 text-right font-medium">1</td>
+
+<td class="py-4 px-6 text-right font-headline font-semibold">R8,900.50</td>
+
+<td class="py-4 px-6">
+
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[#8cd69b]/10 text-[#8cd69b]">
+
+<span class="w-1.5 h-1.5 rounded-full bg-[#8cd69b]"></span>
+
+                                        Processed
+
+                                    </span>
+
+</td>
+
+<td class="py-4 px-6">
+
+<div class="flex items-center gap-2">
+
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">check_circle</span>
+
+<span class="text-xs text-on-surface-variant">Delivered</span>
+
+</div>
+
+</td>
+
+<td class="py-4 px-6 text-on-surface-variant">Oct 23, 2023 <span class="text-xs block opacity-70">16:45 SAST</span></td>
+
+<td class="py-4 px-6 text-right relative">
+
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors opacity-0 group-hover:opacity-100 peer">
+
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+
+</button>
+
+<div class="absolute right-6 top-full mt-1 w-40 bg-surface-container-high rounded-lg shadow-xl border border-outline-variant/30 hidden peer-hover:block hover:block z-50 py-1">
+
+<button class="w-full text-left px-4 py-2 text-sm text-on-surface hover:bg-surface-variant transition-colors">View Order</button>
+
+<button class="w-full text-left px-4 py-2 text-sm text-on-surface hover:bg-surface-variant transition-colors">Fulfill Order</button>
+
+<button class="w-full text-left px-4 py-2 text-sm text-on-surface hover:bg-surface-variant transition-colors">Add Note</button>
+
+</div>
+
+</td>
+
+</tr>
+
+<!-- Row 4 -->
+
+<tr class="hover:bg-surface-variant/50 transition-colors group">
+
+<td class="py-4 px-6 text-center">
+
+<input class="rounded bg-surface-dim border-outline-variant text-primary focus:ring-primary/50" type="checkbox"/>
+
+</td>
+
+<td class="py-4 px-6 font-medium font-headline">ORD-2023-8882</td>
+
+<td class="py-4 px-6 text-on-surface">Lerato Khumalo</td>
+
+<td class="py-4 px-6 text-on-surface-variant">Spark Plugs</td>
+
+<td class="py-4 px-6 text-on-surface-variant">Nissan NP200</td>
+
+<td class="py-4 px-6 text-right font-medium">45</td>
+
+<td class="py-4 px-6 text-right font-headline font-semibold">R45,120.00</td>
+
+<td class="py-4 px-6">
+
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-surface-bright text-tertiary">
+
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+
+                                        Pending Review
+
+                                    </span>
+
+</td>
+
+<td class="py-4 px-6">
+
+<div class="flex items-center gap-2">
+
+<span class="material-symbols-outlined text-[16px] text-tertiary">inventory_2</span>
+
+<span class="text-xs">Packing</span>
+
+</div>
+
+</td>
+
+<td class="py-4 px-6 text-on-surface-variant">Oct 22, 2023 <span class="text-xs block opacity-70">11:20 SAST</span></td>
+
+<td class="py-4 px-6 text-right relative">
+
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors opacity-0 group-hover:opacity-100 peer">
+
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+
+</button>
+
+<div class="absolute right-6 top-full mt-1 w-40 bg-surface-container-high rounded-lg shadow-xl border border-outline-variant/30 hidden peer-hover:block hover:block z-50 py-1">
+
+<button class="w-full text-left px-4 py-2 text-sm text-on-surface hover:bg-surface-variant transition-colors">View Order</button>
+
+<button class="w-full text-left px-4 py-2 text-sm text-on-surface hover:bg-surface-variant transition-colors">Fulfill Order</button>
+
+<button class="w-full text-left px-4 py-2 text-sm text-on-surface hover:bg-surface-variant transition-colors">Add Note</button>
+
+</div>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+</div>
+
+</main>
+
+</body></html>
+
+

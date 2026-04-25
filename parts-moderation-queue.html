@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+<html class="dark" lang="en"><head>
+
+<meta charset="utf-8"/>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>Midnight Architect - Parts Moderation</title>
+
+<!-- Google Fonts -->
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+<!-- Material Symbols -->
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<!-- Tailwind CSS -->
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<!-- Tailwind Config -->
+
+<script id="tailwind-config">
+
+        tailwind.config = {
+
+            darkMode: "class",
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        "tertiary-container": "#ced6f5",
+
+                        "on-background": "#dee5ff",
+
+                        "inverse-primary": "#4954bc",
+
+                        "on-primary-container": "#c9cdff",
+
+                        "surface": "#060e20",
+
+                        "tertiary-dim": "#c0c9e6",
+
+                        "on-primary": "#28329c",
+
+                        "on-tertiary-fixed-variant": "#4b546d",
+
+                        "on-secondary-fixed-variant": "#5c5b5f",
+
+                        "primary": "#bdc2ff",
+
+                        "on-secondary": "#202023",
+
+                        "tertiary": "#dee5ff",
+
+                        "surface-container-low": "#06122d",
+
+                        "surface-container": "#05183c",
+
+                        "tertiary-fixed": "#ced6f5",
+
+                        "on-tertiary-container": "#424a63",
+
+                        "on-secondary-container": "#c1bec3",
+
+                        "on-surface": "#dee5ff",
+
+                        "primary-dim": "#acb3ff",
+
+                        "primary-container": "#2f3aa3",
+
+                        "error": "#ec7c8a",
+
+                        "error-dim": "#b95463",
+
+                        "background": "#060e20",
+
+                        "secondary-container": "#3c3b3f",
+
+                        "on-surface-variant": "#91aaeb",
+
+                        "tertiary-fixed-dim": "#c0c9e6",
+
+                        "surface-container-high": "#031d4b",
+
+                        "surface-bright": "#002867",
+
+                        "surface-dim": "#060e20",
+
+                        "secondary-fixed": "#e5e1e6",
+
+                        "on-primary-fixed": "#27319b",
+
+                        "inverse-surface": "#faf8ff",
+
+                        "primary-fixed-dim": "#ced1ff",
+
+                        "secondary-dim": "#9f9da1",
+
+                        "on-primary-fixed-variant": "#4650b9",
+
+                        "secondary": "#9f9da1",
+
+                        "outline-variant": "#2b4680",
+
+                        "error-container": "#7f2737",
+
+                        "surface-container-highest": "#00225a",
+
+                        "on-error-container": "#ff97a3",
+
+                        "secondary-fixed-dim": "#d6d3d8",
+
+                        "on-tertiary-fixed": "#2f384f",
+
+                        "on-secondary-fixed": "#403f43",
+
+                        "outline": "#5b74b1",
+
+                        "surface-variant": "#00225a",
+
+                        "on-tertiary": "#4a536c",
+
+                        "primary-fixed": "#e0e0ff",
+
+                        "on-error": "#490013",
+
+                        "surface-container-lowest": "#000000",
+
+                        "inverse-on-surface": "#4d556b",
+
+                        "surface-tint": "#bdc2ff"
+
+                    },
+
+                    borderRadius: {
+
+                        "DEFAULT": "0.25rem",
+
+                        "lg": "0.5rem",
+
+                        "xl": "0.75rem",
+
+                        "full": "9999px",
+
+                        "2xl": "1rem",
+
+                        "3xl": "1.5rem"
+
+                    },
+
+                    fontFamily: {
+
+                        "headline": ["Manrope", "sans-serif"],
+
+                        "body": ["Inter", "sans-serif"],
+
+                        "label": ["Inter", "sans-serif"]
+
+                    },
+
+                    boxShadow: {
+
+                        'ambient': '0px 24px 48px rgba(0, 0, 0, 0.4)',
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body class="bg-surface-container-low text-on-surface font-body overflow-hidden flex antialiased">
+
+<!-- Shared Component: SideNavBar -->
+
+<nav class="bg-[#06122d] dark:bg-[#06122d] shadow-none fixed left-0 top-0 h-screen w-64 z-50 transition-all duration-300 ease-in-out">
+
+<div class="flex flex-col h-full py-6">
+
+<!-- Header/Brand -->
+
+<div class="px-6 mb-8">
+
+<div class="flex items-center gap-3">
+
+<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-ambient">
+
+<span class="material-symbols-outlined text-on-primary text-sm font-bold" data-icon="architecture">architecture</span>
+
+</div>
+
+<div>
+
+<h1 class="font-['Manrope'] text-xl font-bold text-indigo-400">Midnight Architect</h1>
+
+<p class="text-xs text-on-surface-variant font-label tracking-wide uppercase mt-0.5">Admin Console</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CTA -->
+
+<div class="px-4 mb-6">
+
+<button class="w-full bg-surface-container hover:bg-[#05183c] text-primary py-2.5 rounded-lg border border-outline-variant/20 flex items-center justify-center gap-2 transition-all duration-300 ease-in-out">
+
+<span class="material-symbols-outlined text-sm" data-icon="report">report</span>
+
+<span class="font-['Manrope'] text-sm tracking-wide font-medium">Report Incident</span>
+
+</button>
+
+</div>
+
+<!-- Navigation Tabs -->
+
+<div class="flex-1 overflow-y-auto flex flex-col gap-1">
+
+<!-- Active Tab -->
+
+<a class="bg-[#00225a] text-indigo-100 rounded-r-full mr-4 px-4 py-3 flex items-center gap-3 font-['Manrope'] text-sm tracking-wide transition-all duration-300 ease-in-out" href="#">
+
+<span class="material-symbols-outlined" data-icon="gavel" style="font-variation-settings: 'FILL' 1;">gavel</span>
+
+                    Mod Queue
+
+                </a>
+
+<!-- Inactive Tabs -->
+
+<a class="text-slate-400 px-4 py-3 hover:text-indigo-300 hover:bg-[#05183c] transition-colors flex items-center gap-3 font-['Manrope'] text-sm tracking-wide rounded-r-full mr-4 transition-all duration-300 ease-in-out" href="#">
+
+<span class="material-symbols-outlined" data-icon="history">history</span>
+
+                    History
+
+                </a>
+
+<a class="text-slate-400 px-4 py-3 hover:text-indigo-300 hover:bg-[#05183c] transition-colors flex items-center gap-3 font-['Manrope'] text-sm tracking-wide rounded-r-full mr-4 transition-all duration-300 ease-in-out" href="#">
+
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+
+                    Analytics
+
+                </a>
+
+<a class="text-slate-400 px-4 py-3 hover:text-indigo-300 hover:bg-[#05183c] transition-colors flex items-center gap-3 font-['Manrope'] text-sm tracking-wide rounded-r-full mr-4 transition-all duration-300 ease-in-out" href="#">
+
+<span class="material-symbols-outlined" data-icon="group">group</span>
+
+                    Team Settings
+
+                </a>
+
+<a class="text-slate-400 px-4 py-3 hover:text-indigo-300 hover:bg-[#05183c] transition-colors flex items-center gap-3 font-['Manrope'] text-sm tracking-wide rounded-r-full mr-4 transition-all duration-300 ease-in-out" href="#">
+
+<span class="material-symbols-outlined" data-icon="policy">policy</span>
+
+                    Policies
+
+                </a>
+
+</div>
+
+<!-- Footer Tabs -->
+
+<div class="mt-auto flex flex-col gap-1">
+
+<a class="text-slate-400 px-4 py-3 hover:text-indigo-300 hover:bg-[#05183c] transition-colors flex items-center gap-3 font-['Manrope'] text-sm tracking-wide rounded-r-full mr-4 transition-all duration-300 ease-in-out" href="#">
+
+<span class="material-symbols-outlined" data-icon="help">help</span>
+
+                    Help
+
+                </a>
+
+<a class="text-slate-400 px-4 py-3 hover:text-indigo-300 hover:bg-[#05183c] transition-colors flex items-center gap-3 font-['Manrope'] text-sm tracking-wide rounded-r-full mr-4 transition-all duration-300 ease-in-out" href="#">
+
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+
+                    Logout
+
+                </a>
+
+</div>
+
+<!-- User Profile Avatar -->
+
+<div class="px-6 pt-6 border-t border-outline-variant/10 mt-2 flex items-center gap-3">
+
+<img alt="Admin User Profile" class="w-10 h-10 rounded-full border-2 border-outline-variant/30" data-alt="professional headshot of an administrative user in dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_SFBK9ThDgtBrz96d_FQyztSSZ-nT-0KmxNS6L4Onw-BsNk7D4Mjv6EMNcB_FXeXUiCfkXX6ZcydogTi4sKSNkbAHy_vzO4gkYdUWdeGpN0LfXY5BSQre8Xusvuhm3-rUshYHzW0i09j1HypRCrdUJF1nz-Wtvh6WRMtlbJX5s0Dm2py-wdOznI_SLJ3xW0u69HWy5MYzKKY7kdB_uDthf3JuZyrGRvnYDAeatZOpV_VcEsgKAg1TDBUbSOb_QCbebfkw3JssCg"/>
+
+<div class="flex-1">
+
+<p class="text-sm font-semibold text-tertiary font-headline">A. Mercer</p>
+
+<p class="text-xs text-on-surface-variant font-label">Tenant Admin</p>
+
+</div>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- Shared Component: TopNavBar -->
+
+<header class="bg-[#060e20]/70 backdrop-blur-xl shadow-none fixed top-0 right-0 w-[calc(100%-16rem)] z-40 transition-transform flex justify-between items-center px-8 h-16">
+
+<!-- Brand/Product Area -->
+
+<div class="flex items-center gap-6">
+
+<h2 class="text-lg font-bold text-slate-100 font-['Manrope']">Marketplace Moderation</h2>
+
+<!-- Navigation Links -->
+
+<nav class="flex items-center gap-6 ml-4">
+
+<a class="font-['Manrope'] font-semibold text-indigo-400 border-b-2 border-indigo-400 pb-1 hover:bg-indigo-500/10 transition-colors" href="#">All Categories</a>
+
+<a class="font-['Manrope'] font-semibold text-slate-400 hover:text-slate-200 hover:bg-indigo-500/10 transition-colors pb-1" href="#">Priority</a>
+
+<a class="font-['Manrope'] font-semibold text-slate-400 hover:text-slate-200 hover:bg-indigo-500/10 transition-colors pb-1" href="#">Flags</a>
+
+</nav>
+
+</div>
+
+<!-- Right Side Actions & Search -->
+
+<div class="flex items-center gap-4">
+
+<!-- Search Bar (on_right) -->
+
+<div class="relative scale-95 active:scale-90 transition-transform">
+
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+
+<input class="bg-surface-container text-sm text-on-surface placeholder:text-on-surface-variant border border-outline-variant/20 rounded-full pl-9 pr-4 py-1.5 focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all w-64 font-body" placeholder="Search queues..." type="text"/>
+
+</div>
+
+<!-- Trailing Icons -->
+
+<div class="flex items-center gap-2">
+
+<button class="w-8 h-8 rounded-full hover:bg-indigo-500/10 flex items-center justify-center text-indigo-400 transition-colors scale-95 active:scale-90">
+
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+
+</button>
+
+<button class="w-8 h-8 rounded-full hover:bg-indigo-500/10 flex items-center justify-center text-indigo-400 transition-colors scale-95 active:scale-90">
+
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- Main Content Canvas -->
+
+<main class="ml-64 mt-16 p-8 h-[calc(100vh-4rem)] w-full overflow-y-auto flex gap-8">
+
+<!-- Left Column: Data Density Area -->
+
+<div class="flex-1 flex flex-col gap-6">
+
+<!-- Page Header -->
+
+<div class="flex justify-between items-end mb-2">
+
+<div>
+
+<h1 class="font-headline text-3xl font-extrabold text-tertiary tracking-tight">Parts Moderation</h1>
+
+<p class="font-body text-on-surface-variant text-sm mt-1">Review vendor submissions and manage catalog integrity.</p>
+
+</div>
+
+</div>
+
+<!-- Bento Grid: Summary Cards -->
+
+<div class="grid grid-cols-4 gap-4">
+
+<div class="bg-surface-container rounded-xl p-5 border border-outline-variant/10 relative overflow-hidden group">
+
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-bright/20 rounded-full blur-2xl group-hover:bg-surface-bright/30 transition-all"></div>
+
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-1">Parts Pending Review</p>
+
+<p class="font-headline text-3xl font-bold text-tertiary">42</p>
+
+<div class="mt-2 flex items-center gap-1 text-surface-tint text-xs font-medium">
+
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+
+<span>+12 since last shift</span>
+
+</div>
+
+</div>
+
+<div class="bg-surface-container rounded-xl p-5 border border-outline-variant/10">
+
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-1">Approved Today</p>
+
+<p class="font-headline text-3xl font-bold text-on-surface">128</p>
+
+</div>
+
+<div class="bg-surface-container rounded-xl p-5 border border-outline-variant/10">
+
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-1">Rejected Today</p>
+
+<p class="font-headline text-3xl font-bold text-error">14</p>
+
+</div>
+
+<div class="bg-surface-container rounded-xl p-5 border border-error-container/30 bg-error-container/5">
+
+<div class="flex justify-between items-start">
+
+<div>
+
+<p class="font-label text-xs uppercase tracking-widest text-on-error-container mb-1">Parts Missing Data</p>
+
+<p class="font-headline text-3xl font-bold text-on-error-container">8</p>
+
+</div>
+
+<span class="material-symbols-outlined text-error-dim" data-icon="warning">warning</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Filter Bar -->
+
+<div class="bg-surface-container rounded-xl p-3 flex items-center gap-4 shadow-sm border border-outline-variant/10">
+
+<div class="flex-1 relative">
+
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="filter_list">filter_list</span>
+
+<input class="w-full bg-surface-container-low text-sm text-on-surface placeholder:text-on-surface-variant border border-outline-variant/20 rounded-lg pl-9 pr-4 py-2 focus:outline-none focus:border-outline-variant/60 transition-colors" placeholder="Filter by part name, part number, or vehicle..." type="text"/>
+
+</div>
+
+<div class="flex items-center gap-2">
+
+<select class="bg-surface-container-low text-sm text-on-surface border border-outline-variant/20 rounded-lg px-3 py-2 focus:outline-none focus:border-outline-variant/60 appearance-none pr-8 relative">
+
+<option>All Spares Shops</option>
+
+<option>Goldwagen Centurion</option>
+
+<option>Midas Randburg</option>
+
+<option>AutoZone Midrand</option>
+
+</select>
+
+</div>
+
+<div class="flex items-center gap-2">
+
+<select class="bg-surface-container-low text-sm text-on-surface border border-outline-variant/20 rounded-lg px-3 py-2 focus:outline-none focus:border-outline-variant/60 appearance-none pr-8">
+
+<option>All Categories</option>
+
+<option>Brakes</option>
+
+<option>Electrical</option>
+
+<option>Engine</option>
+
+</select>
+
+</div>
+
+<div class="h-6 w-px bg-outline-variant/30"></div>
+
+<label class="flex items-center gap-2 cursor-pointer">
+
+<input class="form-checkbox rounded bg-surface-container-low border-outline-variant/30 text-primary focus:ring-primary focus:ring-offset-surface-container" type="checkbox"/>
+
+<span class="text-sm font-medium text-on-surface-variant">Missing Data Only</span>
+
+</label>
+
+</div>
+
+<!-- Data List (The "Zero-Divider" Rule Applied) -->
+
+<div class="flex flex-col gap-3 flex-1 overflow-y-auto pr-2 pb-8">
+
+<!-- List Header (Simulated) -->
+
+<div class="grid grid-cols-12 gap-4 px-4 py-2 text-xs font-label uppercase tracking-widest text-on-surface-variant">
+
+<div class="col-span-3">Part Details</div>
+
+<div class="col-span-2">Spares Shop</div>
+
+<div class="col-span-3">Vehicle Comp. &amp; Cond.</div>
+
+<div class="col-span-2">Status &amp; Flags</div>
+
+<div class="col-span-2 text-right">Submitted</div>
+
+</div>
+
+<!-- Active Item -->
+
+<div class="grid grid-cols-12 gap-4 items-center bg-surface-container-highest rounded-xl p-4 border border-primary/30 shadow-ambient cursor-pointer transition-all relative overflow-hidden group">
+
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+
+<div class="col-span-3 flex items-center gap-4">
+
+<div class="w-12 h-12 rounded-lg bg-surface-container-low border border-outline-variant/20 flex items-center justify-center">
+
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="car_repair">car_repair</span>
+
+</div>
+
+<div>
+
+<p class="font-headline font-semibold text-tertiary text-sm">Front Brake Pads Set</p>
+
+<p class="font-body text-on-surface-variant text-xs mt-0.5">PN: BP-7721-H</p>
+
+</div>
+
+</div>
+
+<div class="col-span-2">
+
+<p class="font-body text-sm text-on-surface">Goldwagen Centurion</p>
+
+<div class="flex items-center gap-1 mt-0.5">
+
+<span class="material-symbols-outlined text-[12px] text-surface-tint" data-icon="verified">verified</span>
+
+<span class="text-[10px] text-on-surface-variant font-label uppercase tracking-wider">Premium</span>
+
+</div>
+
+</div>
+
+<div class="col-span-3 flex flex-col gap-0.5">
+
+<p class="font-body text-sm text-on-surface">Toyota Hilux (2015-2023)</p>
+
+<span class="text-xs text-on-surface-variant">Condition: New</span>
+
+</div>
+
+<div class="col-span-2">
+
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-bright text-on-surface border border-outline-variant/30">
+
+<div class="w-1.5 h-1.5 rounded-full bg-primary-dim"></div>
+
+<span class="text-xs font-medium">Reviewing</span>
+
+</div>
+
+</div>
+
+<div class="col-span-2 text-right">
+
+<p class="font-body text-sm text-on-surface">2h ago</p>
+
+</div>
+
+</div>
+
+<!-- Inactive Item -->
+
+<div class="grid grid-cols-12 gap-4 items-center bg-surface-container rounded-xl p-4 border border-outline-variant/10 hover:bg-surface-variant transition-colors cursor-pointer group">
+
+<div class="col-span-3 flex items-center gap-4">
+
+<div class="w-12 h-12 rounded-lg bg-surface-container-low border border-outline-variant/20 flex items-center justify-center">
+
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="electric_car">electric_car</span>
+
+</div>
+
+<div>
+
+<p class="font-headline font-medium text-tertiary text-sm group-hover:text-primary transition-colors">High-Output Alternator</p>
+
+<p class="font-body text-on-surface-variant text-xs mt-0.5">PN: ALT-990-VX</p>
+
+</div>
+
+</div>
+
+<div class="col-span-2">
+
+<p class="font-body text-sm text-on-surface">Midas Randburg</p>
+
+</div>
+
+<div class="col-span-3 flex flex-col gap-0.5">
+
+<p class="font-body text-sm text-on-surface">VW Polo Vivo</p>
+
+<span class="text-xs text-on-surface-variant">Condition: Refurbished</span>
+
+</div>
+
+<div class="col-span-2">
+
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low border border-outline-variant/30 text-on-surface-variant">
+
+<span class="material-symbols-outlined text-[12px]" data-icon="schedule">schedule</span>
+
+<span class="text-xs font-medium">Pending</span>
+
+</div>
+
+</div>
+
+<div class="col-span-2 text-right">
+
+<p class="font-body text-sm text-on-surface-variant">4h ago</p>
+
+</div>
+
+</div>
+
+<!-- Item with Flag -->
+
+<div class="grid grid-cols-12 gap-4 items-center bg-surface-container rounded-xl p-4 border border-outline-variant/10 hover:bg-surface-variant transition-colors cursor-pointer group relative">
+
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-error-dim rounded-r-full"></div>
+
+<div class="col-span-3 flex items-center gap-4">
+
+<div class="w-12 h-12 rounded-lg bg-surface-container-low border border-outline-variant/20 flex items-center justify-center">
+
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="settings">settings</span>
+
+</div>
+
+<div>
+
+<p class="font-headline font-medium text-tertiary text-sm group-hover:text-primary transition-colors">Heavy Duty Starter Motor</p>
+
+<p class="font-body text-error-dim text-xs mt-0.5 flex items-center gap-1">
+
+<span class="material-symbols-outlined text-[12px]" data-icon="error">error</span> Missing compatibility
+
+                            </p>
+
+</div>
+
+</div>
+
+<div class="col-span-2">
+
+<p class="font-body text-sm text-on-surface">AutoZone Midrand</p>
+
+</div>
+
+<div class="col-span-3 flex flex-col gap-0.5">
+
+<p class="font-body text-sm text-on-surface">Ford Ranger T6</p>
+
+<span class="text-xs text-on-surface-variant">Condition: New</span>
+
+</div>
+
+<div class="col-span-2">
+
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container border border-error-container/50">
+
+<span class="text-xs font-bold tracking-wide">Action Req.</span>
+
+</div>
+
+</div>
+
+<div class="col-span-2 text-right">
+
+<p class="font-body text-sm text-on-surface-variant">Yesterday</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Right Column: Review Drawer (Active State) -->
+
+<aside class="w-[420px] flex-shrink-0 bg-surface-container/80 backdrop-blur-2xl rounded-3xl border border-outline-variant/20 shadow-ambient flex flex-col overflow-hidden relative">
+
+<!-- Context Header -->
+
+<div class="px-6 py-4 border-b border-outline-variant/20 flex justify-between items-center bg-surface-container-highest/50">
+
+<div class="flex items-center gap-2 text-primary">
+
+<span class="material-symbols-outlined text-sm" data-icon="pageview">pageview</span>
+
+<span class="font-label text-xs uppercase tracking-widest font-semibold">Active Review</span>
+
+</div>
+
+<button class="text-on-surface-variant hover:text-tertiary transition-colors">
+
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+
+</button>
+
+</div>
+
+<div class="flex-1 overflow-y-auto p-6 flex flex-col gap-8 scrollbar-hide">
+
+<!-- Product Identity -->
+
+<div>
+
+<div class="w-full h-48 rounded-2xl bg-surface-container-low border border-outline-variant/20 mb-4 overflow-hidden relative flex items-center justify-center">
+
+<span class="material-symbols-outlined text-6xl text-on-surface-variant" data-icon="car_repair">car_repair</span>
+
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+
+<div class="absolute bottom-3 left-4 flex gap-2">
+
+<span class="bg-surface-container-highest/80 backdrop-blur text-tertiary text-[10px] font-label uppercase tracking-wider px-2 py-1 rounded border border-outline-variant/30">Primary Image</span>
+
+</div>
+
+</div>
+
+<h2 class="font-headline text-2xl font-bold text-tertiary leading-tight">Front Brake Pads Set</h2>
+
+<p class="font-body text-on-surface-variant text-sm mt-2 leading-relaxed">High-performance ceramic brake pads for heavy duty use. Ensures maximum stopping power and minimal brake dust.</p>
+
+</div>
+
+<!-- Meta Data Bento -->
+
+<div class="grid grid-cols-2 gap-3">
+
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/10">
+
+<p class="font-label text-[10px] uppercase text-on-surface-variant tracking-wider mb-1">Category</p>
+
+<p class="font-body text-sm font-medium text-on-surface">Brakes &gt; Pads</p>
+
+</div>
+
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/10">
+
+<p class="font-label text-[10px] uppercase text-on-surface-variant tracking-wider mb-1">Brand</p>
+
+<p class="font-body text-sm font-medium text-on-surface">Goldwagen Centurion</p>
+
+</div>
+
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/10">
+
+<p class="font-label text-[10px] uppercase text-on-surface-variant tracking-wider mb-1">Base Price</p>
+
+<p class="font-body text-sm font-medium text-on-surface">R 850.00 ZAR</p>
+
+</div>
+
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/10">
+
+<p class="font-label text-[10px] uppercase text-on-surface-variant tracking-wider mb-1">Stock Level</p>
+
+<p class="font-body text-sm font-medium text-primary">In Stock (12)</p>
+
+</div>
+
+</div>
+
+<!-- Variant Summary -->
+
+<div>
+
+<div class="flex justify-between items-center mb-3">
+
+<h3 class="font-headline text-sm font-semibold text-tertiary">Compatibility</h3>
+
+<span class="text-xs text-primary cursor-pointer hover:underline">View All</span>
+
+</div>
+
+<div class="flex flex-col gap-2">
+
+<div class="flex justify-between items-center bg-surface-container-low p-2.5 rounded-lg border border-outline-variant/10">
+
+<span class="font-body text-sm text-on-surface">Toyota Hilux (2015-2023)</span>
+
+<span class="text-xs text-on-surface-variant">Verified</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Decision Area (Bottom Fixed) -->
+
+<div class="p-6 bg-surface-container-highest border-t border-outline-variant/20 flex flex-col gap-4">
+
+<div class="relative">
+
+<textarea class="w-full bg-surface-container text-sm text-on-surface placeholder:text-on-surface-variant border border-outline-variant/30 rounded-xl p-3 h-20 resize-none focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all font-body" placeholder="Add moderation notes (visible to vendor if rejected)..."></textarea>
+
+</div>
+
+<div class="flex gap-3">
+
+<button class="flex-1 py-2.5 rounded-xl border border-error/30 text-error hover:bg-error-container/20 transition-colors font-headline text-sm font-semibold">
+
+                        Reject
+
+                    </button>
+
+<button class="flex-1 py-2.5 rounded-xl border border-outline-variant/40 text-on-surface hover:bg-surface-container transition-colors font-headline text-sm font-semibold">
+
+                        Req. Changes
+
+                    </button>
+
+<button class="flex-[1.5] py-2.5 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all font-headline text-sm font-bold flex items-center justify-center gap-2">
+
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+
+                        Approve
+
+                    </button>
+
+</div>
+
+</div>
+
+</aside>
+
+</main>
+
+<style>
+
+        /* Hide scrollbar for review drawer but keep functionality */
+
+        .scrollbar-hide::-webkit-scrollbar {
+
+            display: none;
+
+        }
+
+        .scrollbar-hide {
+
+            -ms-overflow-style: none;
+
+            scrollbar-width: none;
+
+        }
+
+    </style>
+
+</body></html>
+
+

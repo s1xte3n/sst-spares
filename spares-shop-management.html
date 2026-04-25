@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+
+
+
+<html class="dark" lang="en"><head>
+
+<meta charset="utf-8"/>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>Spares Shops - Admin Console</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+
+        tailwind.config = {
+
+            darkMode: "class",
+
+            theme: {
+
+                extend: {
+
+                    "colors": {
+
+                        "surface-container": "#05183c",
+
+                        "on-surface": "#dee5ff",
+
+                        "surface-container-lowest": "#000000",
+
+                        "tertiary-container": "#ced6f5",
+
+                        "outline": "#5b74b1",
+
+                        "inverse-surface": "#faf8ff",
+
+                        "on-primary": "#28329c",
+
+                        "on-tertiary-fixed-variant": "#4b546d",
+
+                        "on-secondary-container": "#c1bec3",
+
+                        "primary-dim": "#acb3ff",
+
+                        "primary": "#bdc2ff",
+
+                        "on-error-container": "#ff97a3",
+
+                        "error-dim": "#b95463",
+
+                        "on-tertiary-container": "#424a63",
+
+                        "surface-container-highest": "#00225a",
+
+                        "on-surface-variant": "#91aaeb",
+
+                        "background": "#060e20",
+
+                        "secondary-dim": "#9f9da1",
+
+                        "on-tertiary": "#4a536c",
+
+                        "on-primary-container": "#c9cdff",
+
+                        "secondary-container": "#3c3b3f",
+
+                        "tertiary-fixed": "#ced6f5",
+
+                        "secondary-fixed": "#e5e1e6",
+
+                        "surface-variant": "#00225a",
+
+                        "secondary": "#9f9da1",
+
+                        "surface-container-high": "#031d4b",
+
+                        "surface-dim": "#060e20",
+
+                        "surface-bright": "#002867",
+
+                        "secondary-fixed-dim": "#d6d3d8",
+
+                        "on-tertiary-fixed": "#2f384f",
+
+                        "surface": "#060e20",
+
+                        "outline-variant": "#2b4680",
+
+                        "surface-tint": "#bdc2ff",
+
+                        "on-secondary-fixed-variant": "#5c5b5f",
+
+                        "on-secondary-fixed": "#403f43",
+
+                        "on-primary-fixed": "#27319b",
+
+                        "tertiary-fixed-dim": "#c0c9e6",
+
+                        "on-primary-fixed-variant": "#4650b9",
+
+                        "on-background": "#dee5ff",
+
+                        "primary-fixed": "#e0e0ff",
+
+                        "on-secondary": "#202023",
+
+                        "error-container": "#7f2737",
+
+                        "tertiary": "#dee5ff",
+
+                        "inverse-on-surface": "#4d556b",
+
+                        "tertiary-dim": "#c0c9e6",
+
+                        "primary-container": "#2f3aa3",
+
+                        "on-error": "#490013",
+
+                        "error": "#ec7c8a",
+
+                        "primary-fixed-dim": "#ced1ff",
+
+                        "inverse-primary": "#4954bc",
+
+                        "surface-container-low": "#06122d"
+
+                    },
+
+                    "borderRadius": {
+
+                        "DEFAULT": "0.25rem",
+
+                        "lg": "0.5rem",
+
+                        "xl": "0.75rem",
+
+                        "full": "9999px"
+
+                    },
+
+                    "spacing": {},
+
+                    "fontFamily": {
+
+                        "headline": ["Manrope"],
+
+                        "body": ["Inter"],
+
+                        "label": ["Inter"]
+
+                    }
+
+                },
+
+            },
+
+        }
+
+    </script>
+
+<style>
+
+        body { font-family: 'Inter', sans-serif; background-color: #060e20; color: #dee5ff; }
+
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+
+        .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 20px; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr; -webkit-font-smoothing: antialiased; }
+
+        .ambient-shadow { box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.2); }
+
+        .ghost-border { border: 1px solid rgba(43, 70, 128, 0.2); }
+
+        .gradient-btn { background: linear-gradient(135deg, #bdc2ff, #2f3aa3); color: #28329c; }
+
+    </style>
+
+</head>
+
+<body class="bg-background text-on-surface min-h-screen flex antialiased selection:bg-primary selection:text-on-primary">
+
+<!-- SideNavBar -->
+
+<nav class="fixed left-0 top-0 h-full overflow-y-auto bg-[#06122d] dark:bg-slate-900 shadow-[1px_0_0_0_rgba(43,70,128,0.1)] h-screen w-64 flex flex-col border-r-0 z-50">
+
+<div class="p-6">
+
+<div class="flex items-center gap-3 mb-8">
+
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container font-headline font-bold">M</div>
+
+<div>
+
+<h1 class="text-xl font-bold text-[#dee5ff] dark:text-slate-100 tracking-tighter font-headline">Midnight Architect</h1>
+
+<p class="text-xs text-on-surface-variant uppercase tracking-wider font-label">Enterprise Ops</p>
+
+</div>
+
+</div>
+
+<ul class="space-y-1">
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#91aaeb] dark:text-slate-400 hover:bg-[#00225a] dark:hover:bg-slate-700 hover:text-[#dee5ff] transition-all duration-200 ease-in-out font-manrope text-sm font-semibold tracking-tight" href="#">
+
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+
+<span>Dashboard</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#05183c] dark:bg-slate-800 text-[#bdc2ff] dark:text-indigo-200 font-bold border-r-2 border-[#6366f1] transition-all duration-200 ease-in-out font-manrope text-sm font-semibold tracking-tight translate-x-1" href="#">
+
+<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+
+<span>Spares Shops</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#91aaeb] dark:text-slate-400 hover:bg-[#00225a] dark:hover:bg-slate-700 hover:text-[#dee5ff] transition-all duration-200 ease-in-out font-manrope text-sm font-semibold tracking-tight" href="#">
+
+<span class="material-symbols-outlined" data-icon="category">category</span>
+
+<span>Catalog</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#91aaeb] dark:text-slate-400 hover:bg-[#00225a] dark:hover:bg-slate-700 hover:text-[#dee5ff] transition-all duration-200 ease-in-out font-manrope text-sm font-semibold tracking-tight" href="#">
+
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+
+<span>Inventory</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#91aaeb] dark:text-slate-400 hover:bg-[#00225a] dark:hover:bg-slate-700 hover:text-[#dee5ff] transition-all duration-200 ease-in-out font-manrope text-sm font-semibold tracking-tight" href="#">
+
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+
+<span>Orders</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#91aaeb] dark:text-slate-400 hover:bg-[#00225a] dark:hover:bg-slate-700 hover:text-[#dee5ff] transition-all duration-200 ease-in-out font-manrope text-sm font-semibold tracking-tight" href="#">
+
+<span class="material-symbols-outlined" data-icon="group">group</span>
+
+<span>Customers</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#91aaeb] dark:text-slate-400 hover:bg-[#00225a] dark:hover:bg-slate-700 hover:text-[#dee5ff] transition-all duration-200 ease-in-out font-manrope text-sm font-semibold tracking-tight" href="#">
+
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+
+<span>Billing</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#91aaeb] dark:text-slate-400 hover:bg-[#00225a] dark:hover:bg-slate-700 hover:text-[#dee5ff] transition-all duration-200 ease-in-out font-manrope text-sm font-semibold tracking-tight" href="#">
+
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+
+<span>Analytics</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#91aaeb] dark:text-slate-400 hover:bg-[#00225a] dark:hover:bg-slate-700 hover:text-[#dee5ff] transition-all duration-200 ease-in-out font-manrope text-sm font-semibold tracking-tight" href="#">
+
+<span class="material-symbols-outlined" data-icon="history">history</span>
+
+<span>Audit Logs</span>
+
+</a>
+
+</li>
+
+</ul>
+
+<div class="mt-auto pt-8">
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#91aaeb] dark:text-slate-400 hover:bg-[#00225a] dark:hover:bg-slate-700 hover:text-[#dee5ff] transition-all duration-200 ease-in-out font-manrope text-sm font-semibold tracking-tight" href="#">
+
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+
+<span>Settings</span>
+
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- Main Content Wrapper -->
+
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+
+<!-- TopNavBar -->
+
+<header class="flex items-center justify-between px-6 sticky top-0 z-40 bg-[#060e20]/70 dark:bg-slate-950/70 backdrop-blur-xl w-full h-16 border-b-0 bg-gradient-to-b from-[#060e20] to-transparent focus-within:ring-1 focus-within:ring-[#6366f1]/30">
+
+<div class="flex items-center gap-4 flex-1">
+
+<div class="text-lg font-black text-[#dee5ff] dark:text-slate-100 font-headline tracking-tight">Admin Console</div>
+
+<div class="relative w-64 ml-4">
+
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+
+<input class="w-full bg-surface-container-low text-sm text-on-surface placeholder-on-surface-variant rounded-lg pl-9 pr-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary focus:bg-surface-container transition-colors border-none" placeholder="Search..." type="text"/>
+
+</div>
+
+</div>
+
+<div class="flex items-center gap-4">
+
+<button class="text-[#91aaeb] dark:text-slate-400 hover:text-white transition-colors relative">
+
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+
+</button>
+
+<button class="text-[#91aaeb] dark:text-slate-400 hover:text-white transition-colors">
+
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+
+</button>
+
+<div class="h-6 w-[1px] bg-outline-variant/30 mx-2"></div>
+
+<button class="flex items-center gap-2 text-sm text-[#91aaeb] hover:text-white transition-colors font-label">
+
+<span>Tenant Switcher</span>
+
+<span class="material-symbols-outlined text-sm">expand_more</span>
+
+</button>
+
+<img alt="User Avatar" class="w-8 h-8 rounded-full border border-outline-variant/50 cursor-pointer object-cover" data-alt="professional corporate headshot of a woman in dark lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtBx6nlFYGmjmtC4zFTu_xPeZNGYWRz7fCTxFburp7y8wp0W9gi1Be93CXIC6bdZ_K6YE6KsCftxbDIz11vu9PSJfhfZFaKe7cbqf_jL4EXfUZN3Gpqalxp7dNtveSP6_gxAQnMfzIUz-94eez28cSmgLCIQdHpn5LS-eqUpnAG8LL9PpJY_s_vf4mQe-_BwtmyNP6HXbq6HgnGBkoqFZTIGhM9rXfSdEejXRQ7vUG9AVkygYLRuKw_H9MY3ydDdxQmjY5yw5Vlw"/>
+
+</div>
+
+</header>
+
+<!-- Main Workspace -->
+
+<main class="flex-1 p-8 overflow-y-auto">
+
+<!-- Header Section -->
+
+<div class="flex items-start justify-between mb-8">
+
+<div>
+
+<h1 class="text-3xl font-headline font-bold text-on-surface mb-2 tracking-tight">Spares Shops</h1>
+
+<p class="text-sm text-on-surface-variant font-body max-w-2xl">Manage spares shop onboarding, status, users, and operational health.</p>
+
+</div>
+
+<div class="flex items-center gap-3">
+
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-lg hover:bg-surface-container flex items-center justify-center">
+
+<span class="material-symbols-outlined" data-icon="download">download</span>
+
+</button>
+
+<button class="bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg text-sm font-semibold hover:bg-surface-container transition-colors ghost-border">
+
+                        Create Shop
+
+                    </button>
+
+<button class="gradient-btn px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity flex items-center gap-2">
+
+<span class="material-symbols-outlined text-sm">add</span>
+
+                        Invite Shop
+
+                    </button>
+
+</div>
+
+</div>
+
+<!-- Filters -->
+
+<div class="bg-surface-container rounded-xl p-4 mb-6 flex items-center gap-4 ghost-border">
+
+<div class="relative flex-1 max-w-md">
+
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+
+<input class="w-full bg-surface-container-low text-sm text-on-surface placeholder-on-surface-variant rounded-lg pl-9 pr-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:bg-surface-dim transition-colors border-none ghost-border" placeholder="Search shops by name or ID..." type="text"/>
+
+</div>
+
+<div class="flex items-center gap-3">
+
+<select class="bg-surface-container-low text-sm text-on-surface-variant rounded-lg px-3 py-2 focus:outline-none border-none ghost-border appearance-none pr-8 cursor-pointer relative">
+
+<option>Status: All</option>
+
+<option>Active</option>
+
+<option>Pending</option>
+
+<option>Suspended</option>
+
+</select>
+
+<select class="bg-surface-container-low text-sm text-on-surface-variant rounded-lg px-3 py-2 focus:outline-none border-none ghost-border appearance-none pr-8 cursor-pointer relative">
+
+<option>Location: All</option>
+
+<option>Johannesburg</option>
+
+<option>Durban</option>
+
+<option>Cape Town</option>
+
+<option>Pretoria</option>
+
+</select>
+
+<select class="bg-surface-container-low text-sm text-on-surface-variant rounded-lg px-3 py-2 focus:outline-none border-none ghost-border appearance-none pr-8 cursor-pointer relative">
+
+<option>Specialization: All</option>
+
+<option>Toyota Hilux Parts</option>
+
+<option>VW Spares</option>
+
+<option>BMW Specialist</option>
+
+<option>Engine Components</option>
+
+<option>Body Panels</option>
+
+</select>
+
+</div>
+
+</div>
+
+<!-- Vendor Table Layout -->
+
+<div class="flex gap-6">
+
+<!-- Main Table Area -->
+
+<div class="flex-1 bg-surface-container rounded-xl overflow-hidden ghost-border">
+
+<table class="w-full text-left border-collapse">
+
+<thead>
+
+<tr class="bg-surface-container-low text-on-surface-variant text-xs uppercase tracking-wider font-label">
+
+<th class="px-6 py-4 font-medium w-1/4">Shop Name</th>
+
+<th class="px-6 py-4 font-medium">Status</th>
+
+<th class="px-6 py-4 font-medium">Location</th>
+
+<th class="px-6 py-4 font-medium">Specialization</th>
+
+<th class="px-6 py-4 font-medium text-right">Parts Count</th>
+
+<th class="px-6 py-4 font-medium text-right">Active Orders</th>
+
+<th class="px-6 py-4 font-medium">Last Activity</th>
+
+<th class="px-6 py-4 font-medium text-right"></th>
+
+</tr>
+
+</thead>
+
+<tbody class="text-sm font-body divide-y divide-outline-variant/10">
+
+<!-- Row 1: Active -->
+
+<tr class="hover:bg-surface-variant transition-colors group cursor-pointer bg-surface-variant/30">
+
+<td class="px-6 py-4">
+
+<div class="flex items-center gap-3">
+
+<img alt="Joburg Auto Spares Logo" class="w-10 h-10 rounded-lg object-cover ghost-border" data-alt="modern tech company logo mark abstract geometric shape blue and silver dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6BBfSdZ5Ls_ZgWHw3fCYyZaKVyqMOHjiJO_3rf3oK5nLFh3FHiSVBcMx36VbXJ1Yfnyg3J63En-o6PbwkphMlmQPOfWlUE3II5sO3mFU42kXE0S22V5x2z6BiMmQTbzlCcpJJcjTe2lIhKGwwGZS0MFRaZv10pO1qp2-mtxMIUlrn6v6oWyH7-8yBPzXlRfJ6c8BGkXpFODxx2ex39RS32XCMeRzBENFrUr74mn-qtNBdB7xIXSAw7XxvedV3W2MtJNBivWy-gg"/>
+
+<div>
+
+<div class="font-semibold text-on-surface">Joburg Auto Spares</div>
+
+<div class="text-xs text-on-surface-variant mt-0.5 font-mono">SHP-8492</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td class="px-6 py-4">
+
+<span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-primary-container/20 text-primary-dim border border-primary-container/30">
+
+<span class="w-1.5 h-1.5 rounded-full bg-primary-dim mr-1.5"></span>Active
+
+                                    </span>
+
+</td>
+
+<td class="px-6 py-4 text-on-surface">
+
+                            Johannesburg
+
+                        </td>
+
+<td class="px-6 py-4 text-on-surface">
+
+                            Toyota Hilux Parts
+
+                        </td>
+
+<td class="px-6 py-4 text-right font-mono text-on-surface-variant">1,245</td>
+
+<td class="px-6 py-4 text-right font-mono text-on-surface-variant">42</td>
+
+<td class="px-6 py-4 text-on-surface-variant">2 hours ago</td>
+
+<td class="px-6 py-4 text-right">
+
+<button class="text-on-surface-variant hover:text-on-surface opacity-0 group-hover:opacity-100 transition-opacity p-1">
+
+<span class="material-symbols-outlined text-sm">more_vert</span>
+
+</button>
+
+</td>
+
+</tr>
+
+<!-- Row 2: Pending -->
+
+<tr class="hover:bg-surface-variant transition-colors group cursor-pointer">
+
+<td class="px-6 py-4">
+
+<div class="flex items-center gap-3">
+
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-headline font-bold ghost-border">D</div>
+
+<div>
+
+<div class="font-semibold text-on-surface">Durban Part King</div>
+
+<div class="text-xs text-on-surface-variant mt-0.5 font-mono">SHP-9921</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td class="px-6 py-4">
+
+<span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-tertiary-container/10 text-tertiary-dim border border-tertiary-container/20">
+
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-dim mr-1.5"></span>Pending
+
+                                    </span>
+
+</td>
+
+<td class="px-6 py-4 text-on-surface">
+
+                            Durban
+
+                        </td>
+
+<td class="px-6 py-4 text-on-surface">
+
+                            Engine Components
+
+                        </td>
+
+<td class="px-6 py-4 text-right font-mono text-on-surface-variant">0</td>
+
+<td class="px-6 py-4 text-right font-mono text-on-surface-variant">0</td>
+
+<td class="px-6 py-4 text-on-surface-variant">1 day ago</td>
+
+<td class="px-6 py-4 text-right">
+
+<button class="text-on-surface-variant hover:text-on-surface opacity-0 group-hover:opacity-100 transition-opacity p-1">
+
+<span class="material-symbols-outlined text-sm">more_vert</span>
+
+</button>
+
+</td>
+
+</tr>
+
+<!-- Row 3: Suspended -->
+
+<tr class="hover:bg-surface-variant transition-colors group cursor-pointer">
+
+<td class="px-6 py-4">
+
+<div class="flex items-center gap-3">
+
+<img alt="Pretoria Panel Beaters Logo" class="w-10 h-10 rounded-lg object-cover ghost-border opacity-50 grayscale" data-alt="minimalist typography logo letter S dark industrial background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI8FRmfCbNVgIkBuinqDub5PmnMoIR1BqMErS7j2P8AISWMwArei5Zbvj8m0qjIpyBI65OuSeZcuLiipqO3-PJOpDgfrbMbVCU2N6BEfdveYdFJbthqLe6fWDIx6AjbhO7xKFIYEftBmD4xiH5XzKLLeigR8E74TB5-63di-JUCJRS_NQ8KouhjdYqWRJrDtr8zGeEpe0EeOOZAq2FaJajG8-5vSR08pKVUZ-9sO4FsF-iT_sPJIrLAGaagP_4XGwp32XjPgoOFg"/>
+
+<div>
+
+<div class="font-semibold text-on-surface">Pretoria Panel Beaters</div>
+
+<div class="text-xs text-on-surface-variant mt-0.5 font-mono">SHP-3342</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td class="px-6 py-4">
+
+<span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-error-container text-on-error-container">
+
+<span class="w-1.5 h-1.5 rounded-full bg-on-error-container mr-1.5"></span>Suspended
+
+                                    </span>
+
+</td>
+
+<td class="px-6 py-4 text-on-surface">
+
+                            Pretoria
+
+                        </td>
+
+<td class="px-6 py-4 text-on-surface">
+
+                            Body Panels
+
+                        </td>
+
+<td class="px-6 py-4 text-right font-mono text-on-surface-variant">8,400</td>
+
+<td class="px-6 py-4 text-right font-mono text-on-surface-variant">0</td>
+
+<td class="px-6 py-4 text-on-surface-variant">Oct 12, 2023</td>
+
+<td class="px-6 py-4 text-right">
+
+<button class="text-on-surface-variant hover:text-on-surface opacity-0 group-hover:opacity-100 transition-opacity p-1">
+
+<span class="material-symbols-outlined text-sm">more_vert</span>
+
+</button>
+
+</td>
+
+</tr>
+
+<!-- Row 4: Active -->
+
+<tr class="hover:bg-surface-variant transition-colors group cursor-pointer">
+
+<td class="px-6 py-4">
+
+<div class="flex items-center gap-3">
+
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-headline font-bold ghost-border">C</div>
+
+<div>
+
+<div class="font-semibold text-on-surface">Cape Town Hilux Hub</div>
+
+<div class="text-xs text-on-surface-variant mt-0.5 font-mono">SHP-1102</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td class="px-6 py-4">
+
+<span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-primary-container/20 text-primary-dim border border-primary-container/30">
+
+<span class="w-1.5 h-1.5 rounded-full bg-primary-dim mr-1.5"></span>Active
+
+                                    </span>
+
+</td>
+
+<td class="px-6 py-4 text-on-surface">
+
+                            Cape Town
+
+                        </td>
+
+<td class="px-6 py-4 text-on-surface">
+
+                            VW Spares
+
+                        </td>
+
+<td class="px-6 py-4 text-right font-mono text-on-surface-variant">450</td>
+
+<td class="px-6 py-4 text-right font-mono text-on-surface-variant">12</td>
+
+<td class="px-6 py-4 text-on-surface-variant">5 mins ago</td>
+
+<td class="px-6 py-4 text-right">
+
+<button class="text-on-surface-variant hover:text-on-surface opacity-0 group-hover:opacity-100 transition-opacity p-1">
+
+<span class="material-symbols-outlined text-sm">more_vert</span>
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<!-- Pagination Footer -->
+
+<div class="bg-surface-container-low px-6 py-4 flex items-center justify-between border-t border-outline-variant/10">
+
+<div class="text-sm text-on-surface-variant font-label">Showing <span class="font-medium text-on-surface">1</span> to <span class="font-medium text-on-surface">4</span> of <span class="font-medium text-on-surface">128</span> results</div>
+
+<div class="flex items-center gap-2">
+
+<button class="p-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface disabled:opacity-50" disabled="">
+
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+
+</button>
+
+<button class="p-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface">
+
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Preview Panel (Side) -->
+
+<div class="w-80 flex-shrink-0 bg-surface-container-low rounded-xl p-6 ghost-border flex flex-col h-fit">
+
+<div class="flex items-start justify-between mb-6">
+
+<img alt="Joburg Auto Spares Logo Large" class="w-16 h-16 rounded-xl object-cover ghost-border" data-alt="modern tech company logo mark abstract geometric shape blue and silver dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcdwejFUUrWxfoRo96bWc1uX-BZVsFlmErB3gRqYarzHUI10yue6H_YCHu_Oo50qbGbWhH8l6d6Az1R2ySG8kR9H_QFUeNnBOQJWAEBcW_eE4veTqYH3sEX7EVKEmWahC_9pYY8llV2olZkK2wa74absilyFQeMXlU5_AljHnQHDemg6ORQvxnGeIs49FB14Ri19OI_uIGThEAaOnZlYSBkn4mqDPGWdCtaRpUMsg1wmaQA7oUOhh3AYfe6V5h9xoGZC4HfxpNJQ"/>
+
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+
+<span class="material-symbols-outlined text-sm">close</span>
+
+</button>
+
+</div>
+
+<h2 class="text-xl font-headline font-bold text-on-surface mb-1">Joburg Auto Spares</h2>
+
+<p class="text-sm text-on-surface-variant font-mono mb-6">SHP-8492</p>
+
+<div class="grid grid-cols-2 gap-4 mb-8">
+
+<div class="bg-surface-container rounded-lg p-3 ghost-border">
+
+<div class="text-xs text-on-surface-variant font-label uppercase tracking-wider mb-1">Parts Count</div>
+
+<div class="text-lg font-headline font-semibold text-on-surface">1,245</div>
+
+</div>
+
+<div class="bg-surface-container rounded-lg p-3 ghost-border">
+
+<div class="text-xs text-on-surface-variant font-label uppercase tracking-wider mb-1">Revenue MTD</div>
+
+<div class="text-lg font-headline font-semibold text-primary-dim">R42.5k</div>
+
+</div>
+
+</div>
+
+<div class="space-y-4 text-sm font-body">
+
+<div>
+
+<div class="text-on-surface-variant text-xs font-label uppercase tracking-wider mb-1">Specialization</div>
+
+<div class="text-on-surface">Toyota Hilux Parts</div>
+
+</div>
+
+<div>
+
+<div class="text-on-surface-variant text-xs font-label uppercase tracking-wider mb-1">Primary Contact</div>
+
+<div class="text-on-surface">Sarah Jenkins</div>
+
+<div class="text-on-surface-variant">sarah@joburgspares.co.za</div>
+
+<div class="text-on-surface-variant">+27 (0)11 555 0192</div>
+
+</div>
+
+<div>
+
+<div class="text-on-surface-variant text-xs font-label uppercase tracking-wider mb-1">Location</div>
+
+<div class="text-on-surface">Johannesburg, GP</div>
+
+<div class="text-on-surface-variant">South Africa</div>
+
+</div>
+
+<div>
+
+<div class="text-on-surface-variant text-xs font-label uppercase tracking-wider mb-1">Onboarding Status</div>
+
+<div class="flex items-center gap-2 mt-1">
+
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+
+<div class="h-full bg-primary w-full rounded-full"></div>
+
+</div>
+
+<span class="text-xs text-on-surface-variant">100%</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="mt-8 pt-6 border-t border-outline-variant/20 flex gap-3">
+
+<button class="flex-1 bg-surface-container-highest text-on-surface py-2 rounded-lg text-sm font-semibold hover:bg-surface-container transition-colors ghost-border">
+
+                            View Shop
+
+                        </button>
+
+<button class="p-2 bg-surface-container-highest text-on-surface rounded-lg hover:bg-surface-container transition-colors ghost-border flex items-center justify-center">
+
+<span class="material-symbols-outlined text-sm">mail</span>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+</body></html>
+
+

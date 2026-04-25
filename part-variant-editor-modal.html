@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+
+
+<html class="dark" lang="en"><head>
+
+<meta charset="utf-8"/>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>Edit Part Variant - Auto Spares Marketplace</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+
+        tailwind.config = {
+
+          darkMode: "class",
+
+          theme: {
+
+            extend: {
+
+              "colors": {
+
+                      "primary": "#bdc2ff",
+
+                      "surface-variant": "#00225a",
+
+                      "on-tertiary-fixed": "#2f384f",
+
+                      "secondary": "#9f9da1",
+
+                      "on-surface-variant": "#91aaeb",
+
+                      "surface-container-highest": "#00225a",
+
+                      "outline": "#5b74b1",
+
+                      "primary-dim": "#acb3ff",
+
+                      "on-surface": "#dee5ff",
+
+                      "secondary-fixed-dim": "#d6d3d8",
+
+                      "error-container": "#7f2737",
+
+                      "surface-container": "#05183c",
+
+                      "on-primary": "#28329c",
+
+                      "tertiary": "#dee5ff",
+
+                      "error-dim": "#b95463",
+
+                      "surface-container-low": "#06122d",
+
+                      "secondary-fixed": "#e5e1e6",
+
+                      "on-background": "#dee5ff",
+
+                      "primary-fixed": "#e0e0ff",
+
+                      "surface-tint": "#bdc2ff",
+
+                      "inverse-on-surface": "#4d556b",
+
+                      "background": "#060e20",
+
+                      "secondary-container": "#3c3b3f",
+
+                      "on-primary-container": "#c9cdff",
+
+                      "surface-container-high": "#031d4b",
+
+                      "error": "#ec7c8a",
+
+                      "inverse-primary": "#4954bc",
+
+                      "on-secondary": "#202023",
+
+                      "on-error": "#490013",
+
+                      "primary-container": "#2f3aa3",
+
+                      "primary-fixed-dim": "#ced1ff",
+
+                      "on-tertiary": "#4a536c",
+
+                      "inverse-surface": "#faf8ff",
+
+                      "on-error-container": "#ff97a3",
+
+                      "surface": "#060e20",
+
+                      "on-primary-fixed-variant": "#4650b9",
+
+                      "tertiary-fixed-dim": "#c0c9e6",
+
+                      "on-primary-fixed": "#27319b",
+
+                      "on-secondary-container": "#c1bec3",
+
+                      "secondary-dim": "#9f9da1",
+
+                      "surface-dim": "#060e20",
+
+                      "surface-bright": "#002867",
+
+                      "on-tertiary-container": "#424a63",
+
+                      "tertiary-dim": "#c0c9e6",
+
+                      "on-tertiary-fixed-variant": "#4b546d",
+
+                      "tertiary-container": "#ced6f5",
+
+                      "on-secondary-fixed": "#403f43",
+
+                      "tertiary-fixed": "#ced6f5",
+
+                      "outline-variant": "#2b4680",
+
+                      "on-secondary-fixed-variant": "#5c5b5f",
+
+                      "surface-container-lowest": "#000000"
+
+              },
+
+              "borderRadius": {
+
+                      "DEFAULT": "0.25rem",
+
+                      "lg": "0.5rem",
+
+                      "xl": "0.75rem",
+
+                      "full": "9999px"
+
+              },
+
+              "spacing": {},
+
+              "fontFamily": {
+
+                      "headline": [
+
+                              "Manrope"
+
+                      ],
+
+                      "body": [
+
+                              "Inter"
+
+                      ],
+
+                      "label": [
+
+                              "Inter"
+
+                      ]
+
+              }
+
+      },
+
+          },
+
+        }
+
+      </script>
+
+<style>
+
+        .material-symbols-outlined {
+
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+
+        }
+
+      </style>
+
+</head>
+
+<body class="bg-surface text-on-surface font-body min-h-screen flex items-center justify-center relative overflow-hidden">
+
+<!-- Background Context (Simulated Product Detail Page) -->
+
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none flex flex-col">
+
+<header class="h-16 border-b border-outline-variant/30 px-6 flex items-center justify-between">
+
+<div class="w-48 h-6 bg-surface-container-highest rounded"></div>
+
+<div class="flex gap-4">
+
+<div class="w-8 h-8 rounded-full bg-surface-container-highest"></div>
+
+<div class="w-8 h-8 rounded-full bg-surface-container-highest"></div>
+
+</div>
+
+</header>
+
+<div class="flex-1 p-8 grid grid-cols-3 gap-8">
+
+<div class="col-span-2 space-y-6">
+
+<div class="h-64 bg-surface-container-low rounded-xl"></div>
+
+<div class="h-96 bg-surface-container-low rounded-xl"></div>
+
+</div>
+
+<div class="space-y-6">
+
+<div class="h-48 bg-surface-container-low rounded-xl"></div>
+
+<div class="h-64 bg-surface-container-low rounded-xl"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Modal Overlay -->
+
+<div class="absolute inset-0 bg-background/80 backdrop-blur-sm z-10"></div>
+
+<!-- Modal Container -->
+
+<div class="relative z-20 w-full max-w-4xl max-h-[921px] bg-surface-container rounded-xl shadow-[0_24px_48px_rgba(0,0,0,0.5)] flex flex-col border border-outline-variant/20 overflow-hidden">
+
+<!-- Header -->
+
+<div class="px-8 py-6 border-b border-outline-variant/20 flex justify-between items-center bg-surface-container-low">
+
+<div>
+
+<h2 class="font-headline text-2xl font-bold text-on-surface tracking-tight">Edit Part Variant</h2>
+
+<p class="text-sm font-label text-on-surface-variant mt-1 tracking-wider uppercase">Brembo Ceramic Series</p>
+
+</div>
+
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+
+<span class="material-symbols-outlined text-2xl">close</span>
+
+</button>
+
+</div>
+
+<!-- Scrollable Content -->
+
+<div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+
+<form class="space-y-10">
+
+<!-- Section: Core Details -->
+
+<section>
+
+<h3 class="font-headline text-lg font-semibold text-on-surface mb-6 flex items-center gap-2">
+
+<span class="material-symbols-outlined text-primary text-xl">info</span>
+
+                        Core Details
+
+                    </h3>
+
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+
+<!-- Variant Name -->
+
+<div class="col-span-2">
+
+<label class="block text-sm font-label text-on-surface-variant mb-2 flex items-center gap-1">
+
+                                Variant Name <span class="text-error-dim">*</span>
+
+</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner" type="text" value="Front Brake Pads Set"/>
+
+</div>
+
+<!-- Part Number -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2 flex items-center gap-1">
+
+                                Part Number <span class="text-error-dim">*</span>
+
+</label>
+
+<div class="relative">
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner" type="text" value="NGN-BPS-772"/>
+
+<span class="material-symbols-outlined absolute right-3 top-3.5 text-on-surface-variant text-lg">barcode_scanner</span>
+
+</div>
+
+<p class="text-xs font-label text-on-surface-variant/70 mt-1.5">Internal catalog part number</p>
+
+</div>
+
+<!-- OEM Number -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2">OEM Number</label>
+
+<div class="relative">
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner" type="text" value="04465-0K370"/>
+
+</div>
+
+<p class="text-xs font-label text-on-surface-variant/70 mt-1.5">Original Equipment Manufacturer code</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Section: Vehicle Fitment -->
+
+<section>
+
+<h3 class="font-headline text-lg font-semibold text-on-surface mb-6 flex items-center gap-2">
+
+<span class="material-symbols-outlined text-primary text-xl">directions_car</span>
+
+                        Vehicle Fitment
+
+                    </h3>
+
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+
+<!-- Make -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2 flex items-center gap-1">
+
+                                Vehicle Make <span class="text-error-dim">*</span>
+
+</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner" type="text" value="Toyota"/>
+
+</div>
+
+<!-- Model -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2 flex items-center gap-1">
+
+                                Vehicle Model <span class="text-error-dim">*</span>
+
+</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner" type="text" value="Hilux"/>
+
+</div>
+
+<!-- Year Range -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2 flex items-center gap-1">
+
+                                Year Range <span class="text-error-dim">*</span>
+
+</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner" type="text" value="2015-2023"/>
+
+</div>
+
+<!-- Condition -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2 flex items-center gap-1">
+
+                                Condition <span class="text-error-dim">*</span>
+
+</label>
+
+<div class="relative">
+
+<select class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface appearance-none focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner">
+
+<option selected="" value="new">New</option>
+
+<option value="used">Used</option>
+
+<option value="refurbished">Refurbished</option>
+
+</select>
+
+<span class="material-symbols-outlined absolute right-3 top-3.5 text-on-surface-variant pointer-events-none">expand_more</span>
+
+</div>
+
+</div>
+
+<!-- Engine Type -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2">Engine Type</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner" type="text" value="2.8 GD-6"/>
+
+</div>
+
+<!-- Transmission -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2">Transmission</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner" type="text" value="Automatic / Manual"/>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Section: Pricing & Inventory -->
+
+<section>
+
+<h3 class="font-headline text-lg font-semibold text-on-surface mb-6 flex items-center gap-2">
+
+<span class="material-symbols-outlined text-primary text-xl">payments</span>
+
+                        Pricing &amp; Inventory
+
+                    </h3>
+
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+
+<!-- Price -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2 flex items-center gap-1">
+
+                                Price <span class="text-error-dim">*</span>
+
+</label>
+
+<div class="relative">
+
+<span class="absolute left-4 top-3 text-on-surface-variant">R</span>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg pl-8 pr-4 py-3 text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner" type="number" value="850.00"/>
+
+</div>
+
+</div>
+
+<!-- Stock on Hand -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2 flex items-center gap-1">
+
+                                Stock on Hand <span class="text-error-dim">*</span>
+
+</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner" type="number" value="45"/>
+
+</div>
+
+<!-- Reserved Stock -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2">Reserved Stock</label>
+
+<input class="w-full bg-surface-container-low/50 border border-outline-variant/10 rounded-lg px-4 py-3 text-on-surface-variant cursor-not-allowed" readonly="" type="number" value="12"/>
+
+</div>
+
+<!-- Available Stock -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2">Available Stock</label>
+
+<input class="w-full bg-surface-container-low/50 border border-outline-variant/10 rounded-lg px-4 py-3 text-on-surface-variant cursor-not-allowed" readonly="" type="number" value="33"/>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Section: Additional Details -->
+
+<section>
+
+<h3 class="font-headline text-lg font-semibold text-on-surface mb-6 flex items-center gap-2">
+
+<span class="material-symbols-outlined text-primary text-xl">description</span>
+
+                        Additional Details
+
+                    </h3>
+
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+
+<!-- Weight -->
+
+<div>
+
+<label class="block text-sm font-label text-on-surface-variant mb-2">Weight</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner" type="text" value="1.2 kg"/>
+
+</div>
+
+<!-- Spacer for alignment -->
+
+<div></div>
+
+<!-- Notes -->
+
+<div class="col-span-2">
+
+<label class="block text-sm font-label text-on-surface-variant mb-2">Notes / Fitment Notes</label>
+
+<textarea class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright transition-all shadow-inner resize-none" rows="3">Fits all double cab models with ABS. Includes wear sensors.</textarea>
+
+</div>
+
+</div>
+
+</section>
+
+</form>
+
+</div>
+
+<!-- Footer Actions -->
+
+<div class="px-8 py-5 border-t border-outline-variant/20 bg-surface-container-low flex justify-end gap-4">
+
+<button class="px-6 py-2.5 rounded-lg font-medium text-on-surface-variant bg-surface-container-highest border border-outline-variant/20 hover:bg-surface-container-low transition-colors shadow-sm" type="button">
+
+                Cancel
+
+            </button>
+
+<button class="px-6 py-2.5 rounded-lg font-medium text-on-primary bg-gradient-to-br from-primary to-primary-container hover:from-primary-dim hover:to-primary shadow-sm transition-all flex items-center gap-2" type="button">
+
+                Save Part Variant
+
+                <span class="material-symbols-outlined text-sm">save</span>
+
+</button>
+
+</div>
+
+</div>
+
+</body></html>
+
+

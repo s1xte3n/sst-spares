@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+
+
+
+<html class="dark" lang="en"><head>
+
+<meta charset="utf-8"/>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>Invite Spares Shop</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+
+        tailwind.config = {
+
+            darkMode: "class",
+
+            theme: {
+
+                extend: {
+
+                    "colors": {
+
+                        "on-secondary-fixed-variant": "#5c5b5f",
+
+                        "primary": "#bdc2ff",
+
+                        "on-secondary": "#202023",
+
+                        "tertiary": "#dee5ff",
+
+                        "on-tertiary-fixed-variant": "#4b546d",
+
+                        "surface": "#060e20",
+
+                        "tertiary-dim": "#c0c9e6",
+
+                        "on-primary": "#28329c",
+
+                        "on-background": "#dee5ff",
+
+                        "tertiary-container": "#ced6f5",
+
+                        "on-primary-container": "#c9cdff",
+
+                        "inverse-primary": "#4954bc",
+
+                        "error": "#ec7c8a",
+
+                        "error-dim": "#b95463",
+
+                        "background": "#060e20",
+
+                        "on-surface": "#dee5ff",
+
+                        "primary-dim": "#acb3ff",
+
+                        "primary-container": "#2f3aa3",
+
+                        "on-tertiary-container": "#424a63",
+
+                        "on-secondary-container": "#c1bec3",
+
+                        "surface-container": "#05183c",
+
+                        "tertiary-fixed": "#ced6f5",
+
+                        "surface-container-low": "#06122d",
+
+                        "secondary": "#9f9da1",
+
+                        "outline-variant": "#2b4680",
+
+                        "error-container": "#7f2737",
+
+                        "secondary-dim": "#9f9da1",
+
+                        "on-primary-fixed-variant": "#4650b9",
+
+                        "inverse-surface": "#faf8ff",
+
+                        "primary-fixed-dim": "#ced1ff",
+
+                        "surface-bright": "#002867",
+
+                        "surface-container-high": "#031d4b",
+
+                        "surface-dim": "#060e20",
+
+                        "secondary-fixed": "#e5e1e6",
+
+                        "on-primary-fixed": "#27319b",
+
+                        "secondary-container": "#3c3b3f",
+
+                        "on-surface-variant": "#91aaeb",
+
+                        "tertiary-fixed-dim": "#c0c9e6",
+
+                        "surface-container-lowest": "#000000",
+
+                        "inverse-on-surface": "#4d556b",
+
+                        "surface-tint": "#bdc2ff",
+
+                        "surface-variant": "#00225a",
+
+                        "on-tertiary": "#4a536c",
+
+                        "on-error": "#490013",
+
+                        "primary-fixed": "#e0e0ff",
+
+                        "on-secondary-fixed": "#403f43",
+
+                        "on-tertiary-fixed": "#2f384f",
+
+                        "outline": "#5b74b1",
+
+                        "surface-container-highest": "#00225a",
+
+                        "secondary-fixed-dim": "#d6d3d8",
+
+                        "on-error-container": "#ff97a3"
+
+                    },
+
+                    "borderRadius": {
+
+                        "DEFAULT": "0.25rem",
+
+                        "lg": "0.5rem",
+
+                        "xl": "0.75rem",
+
+                        "full": "9999px"
+
+                    },
+
+                    "spacing": {},
+
+                    "fontFamily": {
+
+                        "headline": ["Manrope"],
+
+                        "body": ["Inter"],
+
+                        "label": ["Inter"]
+
+                    }
+
+                },
+
+            },
+
+        }
+
+    </script>
+
+</head>
+
+<body class="bg-background text-on-surface font-body h-screen w-screen overflow-hidden flex">
+
+<!-- Background Context (Blurred Spares Shop Management) -->
+
+<div class="fixed inset-0 z-0 flex flex-col pointer-events-none blur-sm opacity-50">
+
+<!-- SideNavBar (Dummy) -->
+
+<nav class="docked left-0 h-full w-64 bg-surface-container-low border-none shadow-none tonal-shift bg-surface-container-low fixed flex flex-col pt-20 pb-6 z-40">
+
+<div class="px-6 mb-8">
+
+<div class="text-lg font-black text-on-surface tracking-tight font-headline">Aether Ops</div>
+
+<div class="text-on-surface-variant text-sm font-body">Enterprise Tier</div>
+
+</div>
+
+<div class="flex-1 space-y-2">
+
+<a class="text-on-surface-variant hover:text-on-surface mx-2 px-4 py-3 flex items-center gap-3 hover:bg-surface-container rounded-lg transition-all font-body text-sm" href="#"><span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>Dashboard</a>
+
+<a class="bg-surface-variant text-on-surface rounded-lg mx-2 px-4 py-3 flex items-center gap-3 translate-x-1 transition-transform font-body text-sm" href="#"><span class="material-symbols-outlined" data-icon="storefront">storefront</span>Spares Shops</a>
+
+<a class="text-on-surface-variant hover:text-on-surface mx-2 px-4 py-3 flex items-center gap-3 hover:bg-surface-container rounded-lg transition-all font-body text-sm" href="#"><span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>Operations</a>
+
+<a class="text-on-surface-variant hover:text-on-surface mx-2 px-4 py-3 flex items-center gap-3 hover:bg-surface-container rounded-lg transition-all font-body text-sm" href="#"><span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>Inventory</a>
+
+<a class="text-on-surface-variant hover:text-on-surface mx-2 px-4 py-3 flex items-center gap-3 hover:bg-surface-container rounded-lg transition-all font-body text-sm" href="#"><span class="material-symbols-outlined" data-icon="analytics">analytics</span>Analytics</a>
+
+</div>
+
+</nav>
+
+<div class="ml-64 flex-1 flex flex-col">
+
+<!-- TopNavBar (Dummy) -->
+
+<header class="flex justify-between items-center w-full px-6 py-3 h-16 bg-surface-container-low border-none shadow-none full-width top-0">
+
+<div class="text-xl font-bold font-headline text-on-surface">Spares Shop Management</div>
+
+<div class="flex items-center gap-4">
+
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+
+<div class="w-8 h-8 rounded-full bg-surface-container-highest"></div>
+
+</div>
+
+</header>
+
+<main class="flex-1 p-8 space-y-6">
+
+<!-- Dummy Grid Data -->
+
+<div class="grid grid-cols-4 gap-6">
+
+<div class="h-32 bg-surface-container rounded-lg"></div>
+
+<div class="h-32 bg-surface-container rounded-lg"></div>
+
+<div class="h-32 bg-surface-container rounded-lg"></div>
+
+<div class="h-32 bg-surface-container rounded-lg"></div>
+
+</div>
+
+<div class="h-96 bg-surface-container rounded-xl"></div>
+
+</main>
+
+</div>
+
+</div>
+
+<!-- Modal Overlay -->
+
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-surface-container-lowest/70 backdrop-blur-[10px]">
+
+<!-- Modal Container (Glass & Gradient style) -->
+
+<div class="w-full max-w-3xl bg-surface-container-low rounded-xl overflow-hidden flex flex-col shadow-[0px_24px_48px_rgba(0,0,0,0.5)] border border-outline-variant/20 relative">
+
+<!-- Modal Header -->
+
+<div class="px-8 py-6 bg-surface-container flex items-center justify-between border-b border-surface">
+
+<div class="flex items-center gap-4">
+
+<div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center text-primary">
+
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+
+</div>
+
+<div>
+
+<h2 class="text-2xl font-headline font-bold text-on-surface">Invite Spares Shop</h2>
+
+<p class="text-sm font-label text-on-surface-variant mt-1">Add a new partner to the Aether Ops auto network.</p>
+
+</div>
+
+</div>
+
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+
+<span class="material-symbols-outlined" data-icon="close">close</span>
+
+</button>
+
+</div>
+
+<!-- Modal Body -->
+
+<div class="px-8 py-6 space-y-8 overflow-y-auto max-h-[614px] custom-scrollbar">
+
+<!-- Section 1: Shop Details -->
+
+<div class="space-y-6">
+
+<h3 class="text-sm font-headline font-semibold text-primary uppercase tracking-widest border-b border-surface-container-highest pb-2">Step 1: Shop Details</h3>
+
+<div class="grid grid-cols-2 gap-6">
+
+<div class="space-y-2">
+
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant block">Shop Name</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright placeholder-on-surface-variant/50 transition-all shadow-inner" placeholder="e.g. Masterparts" type="text" value="Goldwagen Centurion"/>
+
+</div>
+
+<div class="space-y-2">
+
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant block">Business Name <span class="text-on-surface-variant/50 normal-case tracking-normal">(Optional)</span></label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright placeholder-on-surface-variant/50 transition-all shadow-inner" placeholder="e.g. Masterparts PTY LTD" type="text" value="Goldwagen Automotive (Pty) Ltd"/>
+
+</div>
+
+</div>
+
+<div class="grid grid-cols-2 gap-6">
+
+<div class="space-y-2">
+
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant block">Location</label>
+
+<div class="relative">
+
+<select class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright appearance-none shadow-inner">
+
+<option class="text-on-surface-variant/50" disabled="" value="">Select a city...</option>
+
+<option selected="" value="johannesburg">Johannesburg / Pretoria</option>
+
+<option value="durban">Durban</option>
+
+<option value="cape_town">Cape Town</option>
+
+<option value="port_elizabeth">Port Elizabeth</option>
+
+<option value="other">Other</option>
+
+</select>
+
+<span class="material-symbols-outlined absolute right-4 top-3 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+
+</div>
+
+</div>
+
+<div class="space-y-2">
+
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant block">Specialization</label>
+
+<div class="relative">
+
+<select class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright appearance-none shadow-inner">
+
+<option class="text-on-surface-variant/50" disabled="" value="">Select specialization...</option>
+
+<option value="all">All Makes &amp; Models</option>
+
+<option selected="" value="vw_audi">VW &amp; Audi Parts</option>
+
+<option value="bmw">BMW Spares</option>
+
+<option value="toyota">Toyota Parts</option>
+
+<option value="ford">Ford Spares</option>
+
+</select>
+
+<span class="material-symbols-outlined absolute right-4 top-3 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grid grid-cols-3 gap-6">
+
+<div class="space-y-2">
+
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant block">Phone Number</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright placeholder-on-surface-variant/50 transition-all shadow-inner" placeholder="+27 (0)11 000 0000" type="tel" value="+27 12 663 1111"/>
+
+</div>
+
+<div class="space-y-2">
+
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant block">VAT Number <span class="text-on-surface-variant/50 normal-case tracking-normal">(Optional)</span></label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright placeholder-on-surface-variant/50 transition-all shadow-inner" placeholder="e.g. 4000000000" type="text" value="4820193821"/>
+
+</div>
+
+<div class="space-y-2">
+
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant block">Reg Number <span class="text-on-surface-variant/50 normal-case tracking-normal">(Optional)</span></label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright placeholder-on-surface-variant/50 transition-all shadow-inner" placeholder="e.g. 2020/000000/07" type="text" value="2015/082711/07"/>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Section 2: Primary Contact -->
+
+<div class="space-y-6">
+
+<h3 class="text-sm font-headline font-semibold text-primary uppercase tracking-widest border-b border-surface-container-highest pb-2">Step 2: Primary Contact</h3>
+
+<div class="grid grid-cols-2 gap-6">
+
+<div class="space-y-2">
+
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant block">Full Name</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright placeholder-on-surface-variant/50 transition-all shadow-inner" placeholder="e.g. Thabo Mbeki" type="text" value="Jaco van der Merwe"/>
+
+</div>
+
+<div class="space-y-2">
+
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant block">Email</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright placeholder-on-surface-variant/50 transition-all shadow-inner" placeholder="name@shop.co.za" type="email" value="jaco@goldwagen.co.za"/>
+
+</div>
+
+</div>
+
+<div class="grid grid-cols-2 gap-6">
+
+<div class="space-y-2">
+
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant block">Phone Number</label>
+
+<input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright placeholder-on-surface-variant/50 transition-all shadow-inner" placeholder="+27 82 000 0000" type="tel" value="+27 83 456 7890"/>
+
+</div>
+
+<div class="space-y-2">
+
+<label class="text-xs font-label uppercase tracking-wider text-on-surface-variant block">Role</label>
+
+<div class="relative">
+
+<select class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:border-outline-variant/60 focus:ring-1 focus:ring-surface-bright appearance-none shadow-inner">
+
+<option class="text-on-surface-variant/50" disabled="" value="">Select a role...</option>
+
+<option selected="" value="owner">Shop Owner</option>
+
+<option value="manager">Manager</option>
+
+<option value="sales">Sales Representative</option>
+
+</select>
+
+<span class="material-symbols-outlined absolute right-4 top-3 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Section 3: Summary -->
+
+<div class="space-y-6">
+
+<h3 class="text-sm font-headline font-semibold text-primary uppercase tracking-widest border-b border-surface-container-highest pb-2">Step 3: Confirmation</h3>
+
+<div class="bg-surface-container rounded-lg p-5 border border-outline-variant/20">
+
+<h4 class="text-sm font-bold text-on-surface mb-4">Invitation Summary</h4>
+
+<div class="grid grid-cols-2 gap-x-8 gap-y-4">
+
+<div>
+
+<div class="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Shop Details</div>
+
+<p class="text-sm text-on-surface font-medium">Goldwagen Centurion</p>
+
+<p class="text-sm text-on-surface-variant">VW &amp; Audi Parts • Johannesburg / Pretoria</p>
+
+<p class="text-sm text-on-surface-variant">VAT: 4820193821</p>
+
+</div>
+
+<div>
+
+<div class="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Contact Person</div>
+
+<p class="text-sm text-on-surface font-medium">Jaco van der Merwe <span class="text-on-surface-variant font-normal">(Shop Owner)</span></p>
+
+<p class="text-sm text-on-surface-variant">jaco@goldwagen.co.za</p>
+
+<p class="text-sm text-on-surface-variant">+27 83 456 7890</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="pt-2">
+
+<label class="flex items-center gap-3 cursor-pointer group">
+
+<div class="relative flex items-center">
+
+<input checked="" class="sr-only peer" type="checkbox"/>
+
+<div class="w-10 h-5 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary-container after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface after:rounded-full after:h-4 after:w-4 after:transition-all border border-outline-variant/20"></div>
+
+</div>
+
+<span class="text-sm font-body text-on-surface group-hover:text-primary transition-colors">Send invitation email immediately</span>
+
+</label>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Modal Footer -->
+
+<div class="px-8 py-5 bg-surface-container border-t border-surface flex justify-end gap-4">
+
+<button class="px-6 py-2.5 rounded-lg text-sm font-label font-medium text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors border border-transparent">
+
+                    Cancel
+
+                </button>
+
+<button class="px-6 py-2.5 rounded-lg text-sm font-label font-medium text-on-primary bg-gradient-to-br from-primary to-primary-container hover:opacity-90 transition-opacity shadow-lg flex items-center gap-2">
+
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+
+                    Invite Spares Shop
+
+                </button>
+
+</div>
+
+</div>
+
+</div>
+
+<style>
+
+        /* Custom scrollbar for webkit */
+
+        .custom-scrollbar::-webkit-scrollbar {
+
+            width: 6px;
+
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+
+            background: rgba(6, 14, 32, 0.5); /* surface */
+
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+
+            background: #2b4680; /* outline-variant */
+
+            border-radius: 4px;
+
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+
+            background: #5b74b1; /* outline */
+
+        }
+
+    </style>
+
+</body></html>
+
+
+
+<!-- Vendor Detail: Users (Improved) - NexGen Networks -->
+
+<!DOCTYPE html>
+
+
+
+<html class="dark" lang="en"><head>
+
+<meta charset="utf-8"/>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>NexGen Networks - Users</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+
+        tailwind.config = {
+
+          darkMode: "class",
+
+          theme: {
+
+            extend: {
+
+              "colors": {
+
+                      "on-secondary-fixed": "#403f43",
+
+                      "on-primary-fixed": "#27319b",
+
+                      "on-secondary-fixed-variant": "#5c5b5f",
+
+                      "surface-tint": "#bdc2ff",
+
+                      "surface": "#060e20",
+
+                      "outline-variant": "#2b4680",
+
+                      "surface-bright": "#002867",
+
+                      "secondary-fixed-dim": "#d6d3d8",
+
+                      "on-tertiary-fixed": "#2f384f",
+
+                      "surface-container-high": "#031d4b",
+
+                      "surface-dim": "#060e20",
+
+                      "surface-variant": "#00225a",
+
+                      "secondary": "#9f9da1",
+
+                      "surface-container-low": "#06122d",
+
+                      "error": "#ec7c8a",
+
+                      "primary-fixed-dim": "#ced1ff",
+
+                      "inverse-primary": "#4954bc",
+
+                      "primary-container": "#2f3aa3",
+
+                      "on-error": "#490013",
+
+                      "tertiary-dim": "#c0c9e6",
+
+                      "tertiary": "#dee5ff",
+
+                      "inverse-on-surface": "#4d556b",
+
+                      "on-secondary": "#202023",
+
+                      "error-container": "#7f2737",
+
+                      "on-primary-fixed-variant": "#4650b9",
+
+                      "on-background": "#dee5ff",
+
+                      "primary-fixed": "#e0e0ff",
+
+                      "tertiary-fixed-dim": "#c0c9e6",
+
+                      "primary-dim": "#acb3ff",
+
+                      "primary": "#bdc2ff",
+
+                      "on-secondary-container": "#c1bec3",
+
+                      "inverse-surface": "#faf8ff",
+
+                      "on-primary": "#28329c",
+
+                      "on-tertiary-fixed-variant": "#4b546d",
+
+                      "outline": "#5b74b1",
+
+                      "tertiary-container": "#ced6f5",
+
+                      "surface-container-lowest": "#000000",
+
+                      "surface-container": "#05183c",
+
+                      "on-surface": "#dee5ff",
+
+                      "tertiary-fixed": "#ced6f5",
+
+                      "secondary-fixed": "#e5e1e6",
+
+                      "secondary-container": "#3c3b3f",
+
+                      "secondary-dim": "#9f9da1",
+
+                      "on-tertiary": "#4a536c",
+
+                      "on-primary-container": "#c9cdff",
+
+                      "background": "#060e20",
+
+                      "on-tertiary-container": "#424a63",
+
+                      "surface-container-highest": "#00225a",
+
+                      "on-surface-variant": "#91aaeb",
+
+                      "on-error-container": "#ff97a3",
+
+                      "error-dim": "#b95463"
+
+              },
+
+              "borderRadius": {
+
+                      "DEFAULT": "0.25rem",
+
+                      "lg": "0.5rem",
+
+                      "xl": "0.75rem",
+
+                      "full": "9999px"
+
+              },
+
+              "spacing": {},
+
+              "fontFamily": {
+
+                      "headline": [
+
+                              "Manrope"
+
+                      ],
+
+                      "body": [
+
+                              "Inter"
+
+                      ],
+
+                      "label": [
+
+                              "Inter"
+
+                      ]
+
+              }
+
+      },
+
+          },
+
+        }
+
+      </script>
+
+<style>
+
+        .material-symbols-outlined {
+
+            font-family: 'Material Symbols Outlined';
+
+            font-weight: normal;
+
+            font-style: normal;
+
+            font-size: 24px;
+
+            line-height: 1;
+
+            letter-spacing: normal;
+
+            text-transform: none;
+
+            display: inline-block;
+
+            white-space: nowrap;
+
+            word-wrap: normal;
+
+            direction: ltr;
+
+            -webkit-font-feature-settings: 'liga';
+
+            -webkit-font-smoothing: antialiased;
+
+        }
+
+        .ghost-border {
+
+            border: 1px solid rgba(43, 70, 128, 0.2);
+
+        }
+
+        .focus-ghost-border:focus-within {
+
+            border-color: rgba(43, 70, 128, 0.6);
+
+        }
+
+        .ambient-shadow {
+
+            box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .text-gradient-primary {
+
+            background: linear-gradient(135deg, theme('colors.primary'), theme('colors.primary-container'));
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+        }
+
+        .bg-gradient-primary {
+
+            background: linear-gradient(135deg, theme('colors.primary'), theme('colors.primary-container'));
+
+        }
+
+      </style>
+
+</head>
+
+<body class="bg-surface text-on-surface font-body min-h-screen antialiased selection:bg-primary-container selection:text-on-primary-container flex">
+
+<!-- SideNavBar -->
+
+<nav class="docked h-screen w-64 left-0 top-0 bg-slate-950 dark:bg-[#060e20] no-border shadow-2xl shadow-black/40 flex flex-col h-full fixed left-0 py-6 z-50">
+
+<div class="px-6 mb-10 flex items-center gap-3">
+
+<img alt="Midnight Architect Logo" class="w-8 h-8 rounded-lg object-cover" data-alt="Abstract geometric 3D logo in deep indigo and metallic blue hues on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbTKpIi8fvxwGn5MyecXvNV5ywG74_f6ERvbL3pGnzu_9MgxLE3w74v9wUvhpsyx_Zp1-DY_140fMQeuNRVtPwM1F3cDwYyv2VmZhamBq72YN6Y384mZhq37mXcq-FyTBlfgsATMFqHufko3mSvHHQpfew1R5WGx3VR75YGJ41Ic00xIz008uGzOgqd3YspQ02jQc63gf16wmr28GnLsAJVYf1Hw006RGmvwdcOL5xr6Cs2d2Ywl9nrLUdinufxLMcrrMg-ZQSdg"/>
+
+<div>
+
+<h1 class="font-headline text-xl font-bold tracking-tighter text-indigo-100 dark:text-[#dee5ff]">Midnight Arch</h1>
+
+<p class="font-label text-xs uppercase tracking-widest text-slate-400 dark:text-[#91aaeb]">Enterprise Ops</p>
+
+</div>
+
+</div>
+
+<ul class="flex flex-col gap-2 px-3 flex-1">
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 dark:text-[#91aaeb] hover:bg-[#05183c] hover:text-white transition-colors scale-95 active:scale-90 transition-transform" href="#">
+
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+
+<span class="font-label text-sm uppercase tracking-[0.05em]">Overview</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#00225a] text-[#bdc2ff] font-semibold border-r-4 border-[#6366F1] scale-95 active:scale-90 transition-transform" href="#">
+
+<span class="material-symbols-outlined text-[20px]" data-icon="storefront" data-weight="fill" style="font-variation-settings: 'FILL' 1;">storefront</span>
+
+<span class="font-label text-sm uppercase tracking-[0.05em]">Vendors</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 dark:text-[#91aaeb] hover:bg-[#05183c] hover:text-white transition-colors scale-95 active:scale-90 transition-transform" href="#">
+
+<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+
+<span class="font-label text-sm uppercase tracking-[0.05em]">Users</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 dark:text-[#91aaeb] hover:bg-[#05183c] hover:text-white transition-colors scale-95 active:scale-90 transition-transform" href="#">
+
+<span class="material-symbols-outlined text-[20px]" data-icon="insights">insights</span>
+
+<span class="font-label text-sm uppercase tracking-[0.05em]">Analytics</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 dark:text-[#91aaeb] hover:bg-[#05183c] hover:text-white transition-colors scale-95 active:scale-90 transition-transform" href="#">
+
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+
+<span class="font-label text-sm uppercase tracking-[0.05em]">Settings</span>
+
+</a>
+
+</li>
+
+</ul>
+
+<div class="px-6 mt-auto">
+
+<button class="w-full py-2.5 px-4 rounded-lg bg-gradient-primary text-on-primary font-label text-sm font-semibold hover:opacity-90 transition-opacity">
+
+                Deployment Console
+
+            </button>
+
+</div>
+
+</nav>
+
+<!-- Main Content Canvas -->
+
+<main class="flex-1 ml-64 flex flex-col min-h-screen">
+
+<!-- TopAppBar -->
+
+<header class="docked full-width top-0 sticky z-40 bg-slate-950/80 dark:bg-[#060e20]/70 backdrop-blur-xl flat shadow-none flex justify-between items-center px-8 h-16 border-b-0 ghost-border">
+
+<div class="flex items-center gap-4 flex-1">
+
+<h2 class="font-headline text-lg font-black text-indigo-50 dark:text-[#dee5ff] mr-8">Marketplace Ops</h2>
+
+<div class="relative w-96 hidden md:block group">
+
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-surface-bright transition-colors text-[20px]" data-icon="search">search</span>
+
+<input class="w-full bg-surface-container-low ghost-border rounded-lg pl-10 pr-4 py-2 text-sm text-on-surface placeholder-on-surface-variant focus:outline-none focus:ring-1 focus:ring-indigo-500 focus-ghost-border transition-all" placeholder="Search operations..." type="text"/>
+
+</div>
+
+</div>
+
+<div class="flex items-center gap-4">
+
+<button class="text-slate-500 dark:text-[#91aaeb] hover:text-white transition-all p-2 rounded-full hover:bg-surface-container relative">
+
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+
+</button>
+
+<button class="text-slate-500 dark:text-[#91aaeb] hover:text-white transition-all p-2 rounded-full hover:bg-surface-container">
+
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+
+</button>
+
+<div class="h-8 w-px bg-outline-variant/30 mx-2"></div>
+
+<img alt="Lead Architect Avatar" class="w-9 h-9 rounded-full object-cover cursor-pointer hover:ring-2 ring-primary-dim transition-all" data-alt="Portrait of a professional man in soft lighting against a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAWU62gwsugihNwiBL5fDR60B0AwajL1XS5Cxvlmo9DdiOCnDS0Dsw0okucYTR0sQRQ0icP2LDUEFwUqryoFpJx4tgZQWJYww35MDv-zUdIOZIikaA1VdUg56mgucL0bxddKV87TRPD0J0uMvcnxfTxAiepiMRn75zEvlPP-Nq1RCXyBitWq-mVHnRnHmbEzE27RbL_TrugKFKud3IAkzh0pwitLq3MUSJGbVh9zfvRUTRq994VyWiZksaFH_Qo7Gs94_-MELykw"/>
+
+</div>
+
+</header>
+
+<!-- Canvas Body -->
+
+<div class="flex-1 p-8 overflow-y-auto">
+
+<!-- Vendor Header Profile -->
+
+<div class="mb-8">
+
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+
+<div class="flex items-center gap-5">
+
+<div class="w-16 h-16 rounded-xl bg-surface-container flex items-center justify-center ghost-border shadow-lg">
+
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="hub">hub</span>
+
+</div>
+
+<div>
+
+<div class="flex items-center gap-3 mb-1">
+
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight">NexGen Networks</h2>
+
+<span class="px-2.5 py-0.5 rounded-full bg-surface-bright/30 text-primary-dim font-label text-xs uppercase tracking-wider ghost-border">Active</span>
+
+</div>
+
+<div class="flex items-center gap-4 text-on-surface-variant font-label text-sm">
+
+<span>ID: VND-2023-442</span>
+
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+
+<span>Joined Oct 2023</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flex gap-3">
+
+<button class="px-4 py-2 rounded-lg bg-surface-container-highest ghost-border text-on-surface text-sm font-medium hover:bg-surface-container transition-colors flex items-center gap-2">
+
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span> Edit Profile
+
+                        </button>
+
+</div>
+
+</div>
+
+<!-- Horizontal Navigation -->
+
+<nav class="flex space-x-1 border-b border-outline-variant/20 mb-8">
+
+<a class="px-4 py-3 text-sm font-medium text-on-surface-variant hover:text-on-surface border-b-2 border-transparent transition-colors" href="#">Overview</a>
+
+<a class="px-4 py-3 text-sm font-medium text-on-surface-variant hover:text-on-surface border-b-2 border-transparent transition-colors flex items-center gap-2" href="#">
+
+                        Orders <span class="bg-surface-container-low px-1.5 py-0.5 rounded text-xs">42</span>
+
+</a>
+
+<a class="px-4 py-3 text-sm font-medium text-on-surface-variant hover:text-on-surface border-b-2 border-transparent transition-colors flex items-center gap-2" href="#">
+
+                        Products <span class="bg-surface-container-low px-1.5 py-0.5 rounded text-xs">128</span>
+
+</a>
+
+<a class="px-4 py-3 text-sm font-medium text-primary border-b-2 border-primary transition-colors flex items-center gap-2" href="#">
+
+                        Users <span class="bg-surface-variant text-primary px-1.5 py-0.5 rounded text-xs">12</span>
+
+</a>
+
+<a class="px-4 py-3 text-sm font-medium text-on-surface-variant hover:text-on-surface border-b-2 border-transparent transition-colors" href="#">Settings</a>
+
+</nav>
+
+</div>
+
+<!-- Users Section Toolbar -->
+
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+
+<div class="relative w-full sm:w-80 group">
+
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-surface-bright transition-colors text-[20px]" data-icon="search">search</span>
+
+<input class="w-full bg-surface-container-low ghost-border rounded-lg pl-10 pr-4 py-2.5 text-sm text-on-surface placeholder-on-surface-variant focus:outline-none focus:ring-1 focus:ring-indigo-500 focus-ghost-border transition-all" placeholder="Search users..." type="text"/>
+
+</div>
+
+<div class="flex items-center gap-3 w-full sm:w-auto">
+
+<button class="flex-1 sm:flex-none px-4 py-2.5 rounded-lg bg-surface-container-highest ghost-border text-on-surface text-sm font-medium hover:bg-surface-container transition-colors flex items-center justify-center gap-2">
+
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span> Filter
+
+                    </button>
+
+<button class="flex-1 sm:flex-none px-4 py-2.5 rounded-lg bg-gradient-primary text-on-primary text-sm font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span> Add User
+
+                    </button>
+
+</div>
+
+</div>
+
+<!-- Users Table / List -->
+
+<div class="bg-surface-container rounded-xl ghost-border overflow-hidden">
+
+<div class="overflow-x-auto">
+
+<table class="w-full text-left border-collapse">
+
+<thead>
+
+<tr class="bg-surface-container-low/50">
+
+<th class="px-6 py-4 font-label text-xs uppercase tracking-wider text-on-surface-variant font-medium">User</th>
+
+<th class="px-6 py-4 font-label text-xs uppercase tracking-wider text-on-surface-variant font-medium">Role</th><th class="px-6 py-4 font-label text-xs uppercase tracking-wider text-on-surface-variant font-medium">Department</th>
+
+<th class="px-6 py-4 font-label text-xs uppercase tracking-wider text-on-surface-variant font-medium">Status</th>
+
+<th class="px-6 py-4 font-label text-xs uppercase tracking-wider text-on-surface-variant font-medium">Last Activity</th>
+
+<th class="px-6 py-4 font-label text-xs uppercase tracking-wider text-on-surface-variant font-medium text-right">Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody class="divide-y divide-outline-variant/10">
+
+<!-- User Row 1 -->
+
+<tr class="hover:bg-surface-variant/30 transition-colors group"><td class="px-6 py-4">
+
+<div class="flex items-center gap-3">
+
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary-dim font-headline font-semibold text-sm">
+
+            TM
+
+        </div>
+
+<div>
+
+<div class="font-medium text-on-surface text-sm">Thabo Mbeki</div>
+
+<div class="text-xs text-on-surface-variant mt-0.5">thabo.m@nexgen.net • +27 11 555 0123</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td class="px-6 py-4">
+
+<span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-[#2f3aa3]/20 text-[#bdc2ff] ghost-border border-[#2f3aa3]/30">
+
+        Shop Owner
+
+    </span>
+
+</td>
+
+<td class="px-6 py-4">
+
+<span class="px-2 py-0.5 rounded-full bg-surface-bright/20 text-primary-dim text-[10px] uppercase font-bold tracking-wider">Sales</span>
+
+</td>
+
+<td class="px-6 py-4">
+
+<div class="flex items-center gap-2">
+
+<div class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]"></div>
+
+<span class="text-sm text-on-surface">Active</span>
+
+</div>
+
+</td>
+
+<td class="px-6 py-4 text-sm text-on-surface-variant font-medium">
+
+    Processed order #ORD-8821
+
+</td>
+
+<td class="px-6 py-4 text-right">
+
+<button class="text-on-surface-variant hover:text-on-surface p-1.5 rounded-lg hover:bg-surface-container-high transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+
+</button>
+
+</td></tr>
+
+<!-- User Row 2 -->
+
+<tr class="hover:bg-surface-variant/30 transition-colors group"><td class="px-6 py-4">
+
+<div class="flex items-center gap-3">
+
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary-dim font-headline font-semibold text-sm">
+
+            LM
+
+        </div>
+
+<div>
+
+<div class="font-medium text-on-surface text-sm">Lerato Moloi</div>
+
+<div class="text-xs text-on-surface-variant mt-0.5">l.moloi@nexgen.net • +27 21 444 0987</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td class="px-6 py-4">
+
+<span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-surface-container-high text-on-surface-variant ghost-border">
+
+        Manager
+
+    </span>
+
+</td>
+
+<td class="px-6 py-4">
+
+<span class="px-2 py-0.5 rounded-full bg-surface-bright/20 text-primary-dim text-[10px] uppercase font-bold tracking-wider">Fulfillment</span>
+
+</td>
+
+<td class="px-6 py-4">
+
+<div class="flex items-center gap-2">
+
+<div class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]"></div>
+
+<span class="text-sm text-on-surface">Active</span>
+
+</div>
+
+</td>
+
+<td class="px-6 py-4 text-sm text-on-surface-variant">
+
+    Last login 2h ago
+
+</td>
+
+<td class="px-6 py-4 text-right">
+
+<button class="text-on-surface-variant hover:text-on-surface p-1.5 rounded-lg hover:bg-surface-container-high transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+
+</button>
+
+</td></tr>
+
+<!-- User Row 3 -->
+
+<tr class="hover:bg-surface-variant/30 transition-colors group"><td class="px-6 py-4">
+
+<div class="flex items-center gap-3">
+
+<div class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant font-headline font-semibold text-sm border border-dashed border-outline-variant/50">
+
+            JM
+
+        </div>
+
+<div>
+
+<div class="font-medium text-on-surface text-sm">Johan van der Merwe</div>
+
+<div class="text-xs text-on-surface-variant mt-0.5">j.merwe@nexgen.net • +27 31 222 5566</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td class="px-6 py-4">
+
+<span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-surface-container-high text-on-surface-variant ghost-border">
+
+        Inventory Staff
+
+    </span>
+
+</td>
+
+<td class="px-6 py-4">
+
+<span class="px-2 py-0.5 rounded-full bg-surface-bright/20 text-primary-dim text-[10px] uppercase font-bold tracking-wider">Inventory</span>
+
+</td>
+
+<td class="px-6 py-4">
+
+<div class="flex items-center gap-2">
+
+<div class="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.5)]"></div>
+
+<span class="text-sm text-on-surface">Active</span>
+
+</div>
+
+</td>
+
+<td class="px-6 py-4 text-sm text-on-surface-variant">
+
+    Updated stock for Brake Pads
+
+</td>
+
+<td class="px-6 py-4 text-right">
+
+<button class="text-on-surface-variant hover:text-on-surface p-1.5 rounded-lg hover:bg-surface-container-high transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+
+</button>
+
+</td></tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- Empty State Concept (Hidden by default, shown for example purposes if no data) -->
+
+<!--
+
+            <div class="mt-8 bg-surface-container-low rounded-xl border border-dashed border-outline-variant/30 p-12 flex flex-col items-center justify-center text-center">
+
+                <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 text-on-surface-variant shadow-inner">
+
+                    <span class="material-symbols-outlined text-3xl" data-icon="group_off">group_off</span>
+
+                </div>
+
+                <h3 class="font-headline text-lg font-semibold text-on-surface mb-2">No users found</h3>
+
+                <p class="text-sm text-on-surface-variant mb-6 max-w-sm">There are currently no users matching your criteria, or no users have been added to this vendor yet.</p>
+
+                <button class="px-4 py-2.5 rounded-lg bg-surface-container-highest ghost-border text-primary text-sm font-medium hover:bg-surface-container transition-colors flex items-center gap-2">
+
+                    <span class="material-symbols-outlined text-[18px]" data-icon="person_add">person_add</span> Add First User
+
+                </button>
+
+            </div>
+
+            -->
+
+</div>
+
+</main>
+
+</body></html>
+
+
+
+<!-- Vendor Detail: Users (Empty State) -->
+
+<!DOCTYPE html>
+
+
+
+<html class="dark" lang="en"><head>
+
+<meta charset="utf-8"/>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>NexGen Networks - Users</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+
+        tailwind.config = {
+
+            darkMode: "class",
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        "on-secondary-fixed": "#403f43",
+
+                        "on-primary-fixed": "#27319b",
+
+                        "on-secondary-fixed-variant": "#5c5b5f",
+
+                        "surface-tint": "#bdc2ff",
+
+                        "surface": "#060e20",
+
+                        "outline-variant": "#2b4680",
+
+                        "surface-bright": "#002867",
+
+                        "secondary-fixed-dim": "#d6d3d8",
+
+                        "on-tertiary-fixed": "#2f384f",
+
+                        "surface-container-high": "#031d4b",
+
+                        "surface-dim": "#060e20",
+
+                        "surface-variant": "#00225a",
+
+                        "secondary": "#9f9da1",
+
+                        "surface-container-low": "#06122d",
+
+                        "error": "#ec7c8a",
+
+                        "primary-fixed-dim": "#ced1ff",
+
+                        "inverse-primary": "#4954bc",
+
+                        "primary-container": "#2f3aa3",
+
+                        "on-error": "#490013",
+
+                        "tertiary-dim": "#c0c9e6",
+
+                        "tertiary": "#dee5ff",
+
+                        "inverse-on-surface": "#4d556b",
+
+                        "on-secondary": "#202023",
+
+                        "error-container": "#7f2737",
+
+                        "on-primary-fixed-variant": "#4650b9",
+
+                        "on-background": "#dee5ff",
+
+                        "primary-fixed": "#e0e0ff",
+
+                        "tertiary-fixed-dim": "#c0c9e6",
+
+                        "primary-dim": "#acb3ff",
+
+                        "primary": "#bdc2ff",
+
+                        "on-secondary-container": "#c1bec3",
+
+                        "inverse-surface": "#faf8ff",
+
+                        "on-primary": "#28329c",
+
+                        "on-tertiary-fixed-variant": "#4b546d",
+
+                        "outline": "#5b74b1",
+
+                        "tertiary-container": "#ced6f5",
+
+                        "surface-container-lowest": "#000000",
+
+                        "surface-container": "#05183c",
+
+                        "on-surface": "#dee5ff",
+
+                        "tertiary-fixed": "#ced6f5",
+
+                        "secondary-fixed": "#e5e1e6",
+
+                        "secondary-container": "#3c3b3f",
+
+                        "secondary-dim": "#9f9da1",
+
+                        "on-tertiary": "#4a536c",
+
+                        "on-primary-container": "#c9cdff",
+
+                        "background": "#060e20",
+
+                        "on-tertiary-container": "#424a63",
+
+                        "surface-container-highest": "#00225a",
+
+                        "on-surface-variant": "#91aaeb",
+
+                        "on-error-container": "#ff97a3",
+
+                        "error-dim": "#b95463"
+
+                    },
+
+                    borderRadius: {
+
+                        "DEFAULT": "0.25rem",
+
+                        "lg": "0.5rem",
+
+                        "xl": "0.75rem",
+
+                        "full": "9999px"
+
+                    },
+
+                    fontFamily: {
+
+                        "headline": ["Manrope", "sans-serif"],
+
+                        "body": ["Inter", "sans-serif"],
+
+                        "label": ["Inter", "sans-serif"]
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+<style>
+
+        body { font-family: 'Inter', sans-serif; }
+
+        h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', sans-serif; }
+
+        .ghost-border { border: 1px solid rgba(43, 70, 128, 0.2); }
+
+        .ghost-border-focus:focus-within { border-color: rgba(43, 70, 128, 0.6); }
+
+        .ambient-shadow { box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.2); }
+
+        .status-prism-active { background-color: var(--surface-bright); color: var(--on-surface); }
+
+        .text-label-spaced { text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.6875rem; }
+
+    </style>
+
+</head>
+
+<body class="bg-[#060e20] text-on-surface antialiased overflow-x-hidden min-h-screen">
+
+<!-- JSON Component: SideNavBar -->
+
+<nav class="hidden md:flex bg-slate-950 dark:bg-[#060e20] docked h-screen w-64 left-0 top-0 bg-slate-900/50 dark:bg-[#06122d] no-border shadow-2xl shadow-black/40 flex flex-col h-full fixed left-0 py-6 z-50">
+
+<div class="px-8 mb-10 flex flex-col gap-1">
+
+<h1 class="text-xl font-bold tracking-tighter text-indigo-100 dark:text-[#dee5ff] font-headline">Midnight Arch</h1>
+
+<p class="text-xs text-on-surface-variant font-label text-label-spaced">Enterprise Ops</p>
+
+</div>
+
+<div class="flex-1 px-4 space-y-2">
+
+<!-- Overview -->
+
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 dark:text-[#91aaeb] hover:bg-[#05183c] hover:text-white transition-colors scale-95 active:scale-90 transition-transform font-body text-sm font-medium" href="#">
+
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+
+                Overview
+
+            </a>
+
+<!-- Vendors (Active Context) -->
+
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-[#00225a] text-[#bdc2ff] font-semibold border-r-4 border-[#6366F1] scale-95 active:scale-90 transition-transform font-body text-sm" href="#">
+
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">storefront</span>
+
+                Vendors
+
+            </a>
+
+<!-- Users -->
+
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 dark:text-[#91aaeb] hover:bg-[#05183c] hover:text-white transition-colors scale-95 active:scale-90 transition-transform font-body text-sm font-medium" href="#">
+
+<span class="material-symbols-outlined text-[20px]">group</span>
+
+                Users
+
+            </a>
+
+<!-- Analytics -->
+
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 dark:text-[#91aaeb] hover:bg-[#05183c] hover:text-white transition-colors scale-95 active:scale-90 transition-transform font-body text-sm font-medium" href="#">
+
+<span class="material-symbols-outlined text-[20px]">insights</span>
+
+                Analytics
+
+            </a>
+
+<!-- Settings -->
+
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-slate-400 dark:text-[#91aaeb] hover:bg-[#05183c] hover:text-white transition-colors scale-95 active:scale-90 transition-transform font-body text-sm font-medium" href="#">
+
+<span class="material-symbols-outlined text-[20px]">settings</span>
+
+                Settings
+
+            </a>
+
+</div>
+
+<div class="px-6 mt-auto">
+
+<button class="w-full py-3 bg-surface-container-highest ghost-border rounded-lg text-on-surface-variant hover:text-primary transition-colors font-body text-sm font-semibold flex items-center justify-center gap-2">
+
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+
+                Deployment Console
+
+            </button>
+
+</div>
+
+</nav>
+
+<!-- JSON Component: TopAppBar -->
+
+<header class="hidden md:flex bg-slate-950/80 dark:bg-[#060e20]/70 backdrop-blur-xl docked full-width top-0 sticky z-40 bg-slate-900 dark:bg-[#06122d] flat shadow-none flex justify-between items-center px-8 h-16 ml-64 border-b border-transparent">
+
+<div class="flex items-center gap-4">
+
+<div class="text-indigo-400 dark:text-[#bdc2ff] font-headline font-semibold text-sm">
+
+                Marketplace Ops
+
+            </div>
+
+</div>
+
+<div class="flex items-center gap-6">
+
+<div class="relative group">
+
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 dark:text-[#91aaeb] text-[20px]">search</span>
+
+<input class="bg-surface-container-low ghost-border rounded-full py-2 pl-10 pr-4 text-sm text-indigo-100 dark:text-[#bdc2ff] focus-within:ring-1 focus-within:ring-indigo-500 focus:outline-none w-64 transition-all placeholder:text-slate-500 dark:placeholder:text-[#91aaeb] font-body" placeholder="Search operations..." type="text"/>
+
+</div>
+
+<div class="flex items-center gap-3 text-slate-500 dark:text-[#91aaeb]">
+
+<button class="hover:text-white transition-all w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-highest">
+
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+
+</button>
+
+<button class="hover:text-white transition-all w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-highest">
+
+<span class="material-symbols-outlined text-[20px]">help_center</span>
+
+</button>
+
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant/30 overflow-hidden ml-2 flex items-center justify-center text-primary font-headline font-bold text-xs">
+
+                    LA
+
+                </div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- Main Content Canvas -->
+
+<main class="md:ml-64 p-8 min-h-[calc(100vh-4rem)] bg-surface text-on-surface">
+
+<!-- Breadcrumb & Header -->
+
+<div class="mb-8">
+
+<div class="flex items-center gap-2 text-sm text-on-surface-variant font-body mb-4">
+
+<a class="hover:text-primary transition-colors" href="#">Vendors</a>
+
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+
+<span class="text-on-surface">NexGen Networks</span>
+
+</div>
+
+<div class="flex items-end justify-between">
+
+<div class="flex items-center gap-4">
+
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest ghost-border flex items-center justify-center text-primary shadow-lg">
+
+<span class="material-symbols-outlined text-[32px]">hub</span>
+
+</div>
+
+<div>
+
+<h1 class="text-3xl font-headline font-extrabold tracking-tight text-on-surface mb-1">NexGen Networks</h1>
+
+<div class="flex items-center gap-3">
+
+<span class="px-2.5 py-0.5 rounded-full bg-[#002867] text-on-surface text-xs font-label font-semibold tracking-wide">ACTIVE</span>
+
+<span class="text-on-surface-variant font-label text-sm">VID-99204A</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flex items-center gap-3">
+
+<button class="px-4 py-2 bg-surface-container-highest ghost-border rounded-lg text-on-surface hover:text-primary transition-colors font-body text-sm font-semibold flex items-center gap-2">
+
+<span class="material-symbols-outlined text-[18px]">edit</span>
+
+                        Edit Details
+
+                    </button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- In-page Navigation Tabs -->
+
+<div class="flex items-center gap-8 border-b border-outline-variant/20 mb-8 px-2">
+
+<a class="py-4 text-on-surface-variant hover:text-primary font-body text-sm font-medium transition-colors border-b-2 border-transparent" href="#">Overview</a>
+
+<a class="py-4 text-on-surface-variant hover:text-primary font-body text-sm font-medium transition-colors border-b-2 border-transparent" href="#">Financials</a>
+
+<a class="py-4 text-primary font-body text-sm font-bold border-b-2 border-primary" href="#">Users</a>
+
+<a class="py-4 text-on-surface-variant hover:text-primary font-body text-sm font-medium transition-colors border-b-2 border-transparent" href="#">Integrations</a>
+
+</div>
+
+<!-- Users Section Content -->
+
+<div class="max-w-6xl">
+
+<!-- Search & Filter Bar -->
+
+<div class="flex items-center justify-between mb-6">
+
+<div class="relative w-80">
+
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+
+<input class="w-full bg-surface-container-low ghost-border ghost-border-focus rounded-lg py-2 pl-10 pr-4 text-sm text-on-surface focus:outline-none transition-all placeholder:text-on-surface-variant font-body" placeholder="Search users by name or email..." type="text"/>
+
+</div>
+
+<div class="flex items-center gap-3">
+
+<button class="px-3 py-2 bg-surface-container ghost-border rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-body text-sm flex items-center gap-2">
+
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+
+                        Role: All
+
+                    </button>
+
+<button class="px-3 py-2 bg-surface-container ghost-border rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-body text-sm flex items-center gap-2">
+
+<span class="material-symbols-outlined text-[18px]">sort</span>
+
+                        Newest First
+
+                    </button>
+
+</div>
+
+</div>
+
+<!-- Central Empty State Bento/Card -->
+
+<div class="bg-surface-container rounded-xl ghost-border p-16 flex flex-col items-center justify-center text-center mt-4">
+
+<!-- Illustration/Icon Container -->
+
+<div class="w-24 h-24 rounded-full bg-surface-container-highest flex items-center justify-center mb-6 ambient-shadow relative overflow-hidden">
+
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
+
+<span class="material-symbols-outlined text-[48px] text-primary relative z-10" style="font-variation-settings: 'wght' 300;">group_add</span>
+
+</div>
+
+<!-- Text Content -->
+
+<h2 class="text-2xl font-headline font-bold text-on-surface mb-3 tracking-tight">No staff members added yet.</h2>
+
+<p class="text-on-surface-variant font-body text-base max-w-sm leading-relaxed mb-4">Invite your first team member to start managing parts, stock, and orders.</p><p class="text-on-surface-variant/70 font-body text-xs max-w-sm mb-8 leading-relaxed">Staff roles allow you to delegate management of inventory, orders, and parts catalog.</p>
+
+<!-- CTA -->
+
+<button class="px-6 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-lg font-label font-bold text-sm tracking-wide flex items-center gap-2 shadow-[0_8px_16px_rgba(47,58,163,0.3)] hover:shadow-[0_12px_24px_rgba(47,58,163,0.4)] transition-all transform hover:-translate-y-0.5"><span class="material-symbols-outlined text-[20px]">person_add</span> Invite Staff Member</button>
+
+</div>
+
+</div>
+
+</main>
+
+</body></html>
+
+

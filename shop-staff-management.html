@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+
+
+
+<html class="dark" lang="en"><head>
+
+<meta charset="utf-8"/>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>NexGen Networks - Shop Staff</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+
+        tailwind.config = {
+
+            darkMode: "class",
+
+            theme: {
+
+                extend: {
+
+                    "colors": {
+
+                        "on-tertiary-fixed-variant": "#4b546d",
+
+                        "on-background": "#dee5ff",
+
+                        "surface-container-highest": "#00225a",
+
+                        "background": "#060e20",
+
+                        "on-primary": "#28329c",
+
+                        "surface-tint": "#bdc2ff",
+
+                        "error-dim": "#b95463",
+
+                        "on-surface": "#dee5ff",
+
+                        "on-primary-fixed": "#27319b",
+
+                        "on-surface-variant": "#91aaeb",
+
+                        "on-primary-fixed-variant": "#4650b9",
+
+                        "on-error-container": "#ff97a3",
+
+                        "primary-fixed": "#e0e0ff",
+
+                        "surface-bright": "#002867",
+
+                        "on-secondary-container": "#c1bec3",
+
+                        "error-container": "#7f2737",
+
+                        "secondary-fixed": "#e5e1e6",
+
+                        "primary-dim": "#acb3ff",
+
+                        "tertiary-container": "#ced6f5",
+
+                        "surface-container-lowest": "#000000",
+
+                        "surface-container": "#05183c",
+
+                        "tertiary-fixed-dim": "#c0c9e6",
+
+                        "tertiary": "#dee5ff",
+
+                        "on-secondary": "#202023",
+
+                        "error": "#ec7c8a",
+
+                        "secondary-dim": "#9f9da1",
+
+                        "on-error": "#490013",
+
+                        "tertiary-dim": "#c0c9e6",
+
+                        "inverse-surface": "#faf8ff",
+
+                        "on-secondary-fixed-variant": "#5c5b5f",
+
+                        "outline": "#5b74b1",
+
+                        "secondary-fixed-dim": "#d6d3d8",
+
+                        "primary-fixed-dim": "#ced1ff",
+
+                        "on-secondary-fixed": "#403f43",
+
+                        "surface-variant": "#00225a",
+
+                        "primary": "#bdc2ff",
+
+                        "surface": "#060e20",
+
+                        "outline-variant": "#2b4680",
+
+                        "inverse-on-surface": "#4d556b",
+
+                        "on-tertiary-fixed": "#2f384f",
+
+                        "on-tertiary": "#4a536c",
+
+                        "surface-dim": "#060e20",
+
+                        "surface-container-low": "#06122d",
+
+                        "surface-container-high": "#031d4b",
+
+                        "on-primary-container": "#c9cdff",
+
+                        "on-tertiary-container": "#424a63",
+
+                        "inverse-primary": "#4954bc",
+
+                        "secondary": "#9f9da1",
+
+                        "primary-container": "#2f3aa3",
+
+                        "tertiary-fixed": "#ced6f5",
+
+                        "secondary-container": "#3c3b3f"
+
+                    },
+
+                    "borderRadius": {
+
+                        "DEFAULT": "0.25rem",
+
+                        "lg": "0.5rem",
+
+                        "xl": "0.75rem",
+
+                        "full": "9999px"
+
+                    },
+
+                    "spacing": {},
+
+                    "fontFamily": {
+
+                        "headline": ["Manrope"],
+
+                        "body": ["Inter"],
+
+                        "label": ["Inter"]
+
+                    }
+
+                },
+
+            },
+
+        }
+
+    </script>
+
+<style>
+
+        .material-symbols-outlined {
+
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+
+        }
+
+        .icon-fill {
+
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-background text-on-background font-body antialiased min-h-screen flex">
+
+<!-- SideNavBar Component -->
+
+<nav class="fixed left-0 top-0 h-screen w-64 flex flex-col bg-[#06122d] border-none flat no-border tonal-layering z-40">
+
+<div class="p-6">
+
+<div class="flex items-center gap-3 mb-8">
+
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-[0_4px_12px_rgba(47,58,163,0.3)]">
+
+<span class="material-symbols-outlined text-on-primary icon-fill">rocket_launch</span>
+
+</div>
+
+<div>
+
+<h1 class="text-xl font-bold text-[#dee5ff] font-['Manrope'] tracking-tight">Midnight Admin</h1>
+
+<p class="text-xs text-on-surface-variant font-label">Enterprise Ops</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flex flex-col gap-1 py-6 overflow-y-auto flex-1">
+
+<a class="text-[#91aaeb] hover:bg-[#00225a]/50 mx-2 px-4 py-3 flex items-center gap-3 rounded-lg transition-all hover:text-[#dee5ff] active:scale-[0.98] duration-150" href="#">
+
+<span class="material-symbols-outlined text-lg">dashboard</span>
+
+<span class="font-['Manrope'] tracking-tight font-semibold text-sm">Dashboard</span>
+
+</a>
+
+<a class="bg-[#00225a] text-[#bdc2ff] rounded-lg mx-2 px-4 py-3 flex items-center gap-3 transition-all active:scale-[0.98] duration-150" href="#">
+
+<span class="material-symbols-outlined text-lg icon-fill">storefront</span>
+
+<span class="font-['Manrope'] tracking-tight font-semibold text-sm">Spares Shops</span>
+
+</a>
+
+<a class="text-[#91aaeb] hover:bg-[#00225a]/50 mx-2 px-4 py-3 flex items-center gap-3 rounded-lg transition-all hover:text-[#dee5ff] active:scale-[0.98] duration-150" href="#">
+
+<span class="material-symbols-outlined text-lg">category</span>
+
+<span class="font-['Manrope'] tracking-tight font-semibold text-sm">Catalog</span>
+
+</a>
+
+<a class="text-[#91aaeb] hover:bg-[#00225a]/50 mx-2 px-4 py-3 flex items-center gap-3 rounded-lg transition-all hover:text-[#dee5ff] active:scale-[0.98] duration-150" href="#">
+
+<span class="material-symbols-outlined text-lg">inventory_2</span>
+
+<span class="font-['Manrope'] tracking-tight font-semibold text-sm">Inventory</span>
+
+</a>
+
+<a class="text-[#91aaeb] hover:bg-[#00225a]/50 mx-2 px-4 py-3 flex items-center gap-3 rounded-lg transition-all hover:text-[#dee5ff] active:scale-[0.98] duration-150" href="#">
+
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+
+<span class="font-['Manrope'] tracking-tight font-semibold text-sm">Orders</span>
+
+</a>
+
+<a class="text-[#91aaeb] hover:bg-[#00225a]/50 mx-2 px-4 py-3 flex items-center gap-3 rounded-lg transition-all hover:text-[#dee5ff] active:scale-[0.98] duration-150" href="#">
+
+<span class="material-symbols-outlined text-lg">group</span>
+
+<span class="font-['Manrope'] tracking-tight font-semibold text-sm">Customers</span>
+
+</a>
+
+<a class="text-[#91aaeb] hover:bg-[#00225a]/50 mx-2 px-4 py-3 flex items-center gap-3 rounded-lg transition-all hover:text-[#dee5ff] active:scale-[0.98] duration-150" href="#">
+
+<span class="material-symbols-outlined text-lg">payments</span>
+
+<span class="font-['Manrope'] tracking-tight font-semibold text-sm">Billing</span>
+
+</a>
+
+<a class="text-[#91aaeb] hover:bg-[#00225a]/50 mx-2 px-4 py-3 flex items-center gap-3 rounded-lg transition-all hover:text-[#dee5ff] active:scale-[0.98] duration-150" href="#">
+
+<span class="material-symbols-outlined text-lg">analytics</span>
+
+<span class="font-['Manrope'] tracking-tight font-semibold text-sm">Analytics</span>
+
+</a>
+
+<a class="text-[#91aaeb] hover:bg-[#00225a]/50 mx-2 px-4 py-3 flex items-center gap-3 rounded-lg transition-all hover:text-[#dee5ff] active:scale-[0.98] duration-150" href="#">
+
+<span class="material-symbols-outlined text-lg">history</span>
+
+<span class="font-['Manrope'] tracking-tight font-semibold text-sm">Audit Logs</span>
+
+</a>
+
+<a class="text-[#91aaeb] hover:bg-[#00225a]/50 mx-2 px-4 py-3 flex items-center gap-3 rounded-lg transition-all hover:text-[#dee5ff] active:scale-[0.98] duration-150 mt-auto" href="#">
+
+<span class="material-symbols-outlined text-lg">settings</span>
+
+<span class="font-['Manrope'] tracking-tight font-semibold text-sm">Settings</span>
+
+</a>
+
+</div>
+
+</nav>
+
+<!-- Main Content Area -->
+
+<main class="flex-1 ml-64 min-h-screen bg-surface flex flex-col relative">
+
+<!-- TopNavBar Component -->
+
+<header class="sticky top-0 right-0 w-full h-16 z-50 bg-[#060e20]/80 backdrop-blur-md shadow-[0_1px_0_0_rgba(43,70,128,0.1)] flat depth-glass flex items-center justify-between px-8">
+
+<div class="flex items-center gap-6">
+
+<!-- Vendor Breadcrumb -->
+
+<div class="flex items-center gap-2 text-sm font-body font-medium">
+
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Spares Shops</a>
+
+<span class="material-symbols-outlined text-sm text-on-surface-variant">chevron_right</span>
+
+<span class="text-on-surface">NexGen Networks</span>
+
+</div>
+
+</div>
+
+<!-- Global Actions -->
+
+<div class="flex items-center gap-4">
+
+<div class="relative focus-within:ring-1 focus-within:ring-[#2b4680] rounded-lg bg-surface-container-low flex items-center px-3 py-1.5 transition-all">
+
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
+
+<input class="bg-transparent border-none text-sm text-on-surface focus:outline-none focus:ring-0 placeholder-on-surface-variant/50 w-48 font-body" placeholder="Search..." type="text"/>
+
+</div>
+
+<button class="text-on-surface-variant hover:text-primary transition-colors relative w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-high">
+
+<span class="material-symbols-outlined text-lg">notifications</span>
+
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border border-surface"></span>
+
+</button>
+
+<button class="text-on-surface-variant hover:text-primary transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-high">
+
+<span class="material-symbols-outlined text-lg">apps</span>
+
+</button>
+
+<div class="w-px h-6 bg-outline-variant/30 mx-2"></div>
+
+<button class="flex items-center gap-2 hover:bg-surface-container-high p-1 pr-3 rounded-full transition-colors border border-outline-variant/20">
+
+<img alt="Administrator Profile" class="w-7 h-7 rounded-full object-cover" data-alt="professional headshot of an administrator in a corporate setting with dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsmBhZpgAN2OT8e8Va1Us9A7hcEPa9cSWfAEc1yhJ0afFLWIfI6S8BTDyb60O4vz_pOWKr4KVfuYQQINZOaAe3rVaFPbZEzkb5prdObVt_RfL5jT-Zz8rcmW59agOjdYMdtlRatpxLzn_oXsWWpPRaATszKUZeVe0pTfLPhpuAuVn9XRgGwBjxmXLsyD1BGKC_l3Fu0mnGeZaBsi0I-QTQMh2M6yFvv1wQlaBYVb_hiS5Erd6K16wm-MeHOMifYTzqpXTkWAUxsg"/>
+
+<span class="text-sm font-medium font-body text-on-surface">Admin</span>
+
+<span class="material-symbols-outlined text-sm text-on-surface-variant">expand_more</span>
+
+</button>
+
+</div>
+
+</header>
+
+<!-- Page Canvas -->
+
+<div class="p-8 flex-1 flex flex-col gap-6 max-w-7xl mx-auto w-full">
+
+<!-- Vendor Header Profile -->
+
+<section class="bg-surface-container rounded-xl p-6 relative overflow-hidden flex items-start justify-between">
+
+<!-- Background Pattern overlay -->
+
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"></div>
+
+<div class="flex items-center gap-6 relative z-10">
+
+<div class="w-20 h-20 rounded-xl bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center flex-shrink-0 shadow-[0_8px_24px_rgba(0,34,90,0.4)]">
+
+<span class="material-symbols-outlined text-4xl text-primary icon-fill">hub</span>
+
+</div>
+
+<div>
+
+<div class="flex items-center gap-3 mb-1">
+
+<h2 class="text-2xl font-headline font-bold text-on-surface tracking-tight">NexGen Networks</h2>
+
+<span class="px-2.5 py-0.5 rounded-full bg-surface-bright text-primary text-xs font-label font-medium uppercase tracking-wider border border-primary/20 flex items-center gap-1">
+
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+
+                                Active
+
+                            </span>
+
+</div>
+
+<p class="text-sm text-on-surface-variant font-body mb-3">Leading auto spares and accessories provider.</p>
+
+<div class="flex items-center gap-4 text-xs font-label text-on-surface-variant">
+
+<div class="flex items-center gap-1">
+
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+
+<span>Johannesburg, ZA</span>
+
+</div>
+
+<div class="flex items-center gap-1">
+
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+
+<span>Joined Oct 2022</span>
+
+</div>
+
+<div class="flex items-center gap-1">
+
+<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+
+<span>Net 30 Terms</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flex flex-col gap-2 z-10">
+
+<button class="bg-surface-container-highest border border-outline-variant/30 text-on-surface px-4 py-2 rounded-lg text-sm font-body font-medium hover:bg-surface-bright transition-colors flex items-center gap-2">
+
+<span class="material-symbols-outlined text-sm">edit</span>
+
+                        Edit Profile
+
+                    </button>
+
+<button class="bg-transparent text-on-surface-variant hover:text-primary px-4 py-2 rounded-lg text-sm font-body font-medium transition-colors flex items-center gap-2 justify-center">
+
+<span class="material-symbols-outlined text-sm">more_horiz</span>
+
+                        Actions
+
+                    </button>
+
+</div>
+
+</section>
+
+<!-- Page Level Navigation -->
+
+<div class="flex items-center border-b border-outline-variant/20 gap-8 px-2">
+
+<a class="text-on-surface-variant hover:text-on-surface pb-3 text-sm font-body font-medium transition-colors border-b-2 border-transparent" href="#">Overview</a>
+
+<a class="text-on-surface-variant hover:text-on-surface pb-3 text-sm font-body font-medium transition-colors border-b-2 border-transparent" href="#">Orders (42)</a>
+
+<a class="text-on-surface-variant hover:text-on-surface pb-3 text-sm font-body font-medium transition-colors border-b-2 border-transparent" href="#">Products (128)</a>
+
+<a class="text-primary pb-3 text-sm font-body font-semibold border-b-2 border-primary flex items-center gap-2" href="#">
+
+                    Shop Staff
+
+                    <span class="bg-primary/10 text-primary px-1.5 py-0.5 rounded text-[10px] font-bold">12</span>
+
+</a>
+
+<a class="text-on-surface-variant hover:text-on-surface pb-3 text-sm font-body font-medium transition-colors border-b-2 border-transparent" href="#">Settings</a>
+
+</div>
+
+<!-- Users Section Header & Toolbar -->
+
+<div class="flex items-center justify-between mt-2">
+
+<div>
+
+<h3 class="text-lg font-headline font-semibold text-on-surface">Shop Staff</h3>
+
+<p class="text-sm text-on-surface-variant font-body">Manage access and roles for NexGen Networks staff.</p>
+
+</div>
+
+<div class="flex items-center gap-3">
+
+<!-- Filter/Search -->
+
+<div class="relative focus-within:ring-1 focus-within:ring-[#2b4680] rounded-lg bg-surface-container border border-outline-variant/20 flex items-center px-3 py-2 transition-all">
+
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
+
+<input class="bg-transparent border-none text-sm text-on-surface focus:outline-none focus:ring-0 placeholder-on-surface-variant/50 w-48 font-body" placeholder="Search staff..." type="text"/>
+
+</div>
+
+<button class="bg-surface-container border border-outline-variant/20 text-on-surface px-3 py-2 rounded-lg text-sm font-body font-medium hover:bg-surface-bright transition-colors flex items-center gap-2">
+
+<span class="material-symbols-outlined text-sm">filter_list</span>
+
+                        Filter
+
+                    </button>
+
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-4 py-2 rounded-lg text-sm font-body font-semibold shadow-[0_4px_12px_rgba(47,58,163,0.3)] hover:opacity-90 transition-opacity flex items-center gap-2">
+
+<span class="material-symbols-outlined text-sm font-bold">add</span>
+
+                        Invite Staff Member
+
+                    </button>
+
+</div>
+
+</div>
+
+<!-- Users Data Grid -->
+
+<div class="bg-surface-container rounded-xl overflow-hidden flex flex-col mt-2">
+
+<!-- Table Header -->
+
+<div class="grid grid-cols-[minmax(200px,2fr)_1fr_minmax(150px,1.5fr)_1fr_1fr_100px] gap-4 px-6 py-4 bg-surface-container-low border-b border-outline-variant/20">
+
+<div class="text-xs font-label text-on-surface-variant uppercase tracking-wider font-semibold">Name</div>
+
+<div class="text-xs font-label text-on-surface-variant uppercase tracking-wider font-semibold">Role</div>
+
+<div class="text-xs font-label text-on-surface-variant uppercase tracking-wider font-semibold">Contact</div>
+
+<div class="text-xs font-label text-on-surface-variant uppercase tracking-wider font-semibold">Status</div>
+
+<div class="text-xs font-label text-on-surface-variant uppercase tracking-wider font-semibold">Last Activity</div>
+
+<div class="text-xs font-label text-on-surface-variant uppercase tracking-wider font-semibold text-right">Actions</div>
+
+</div>
+
+<!-- Table Body -->
+
+<div class="flex flex-col">
+
+<!-- Row 1 -->
+
+<div class="grid grid-cols-[minmax(200px,2fr)_1fr_minmax(150px,1.5fr)_1fr_1fr_100px] gap-4 px-6 py-4 items-center hover:bg-surface-variant/50 transition-colors border-b border-outline-variant/10 group">
+
+<div class="flex items-center gap-3">
+
+<img alt="Sipho Khumalo" class="w-10 h-10 rounded-lg object-cover border border-outline-variant/30" data-alt="professional headshot of a male executive against a neutral gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjVIw_1fqkmROEPGluqznyngWi9iHWK4H_m2BXEbqIRw7kXkhtsMCTCEZ5-l9YEXMO_roBPjK0nRjE3sHhhvYA0X19ZPQ1LM29JQMUWUZ-eGGsP7gcPV1uZmeOkCUZm7kz2mA_E-8a9SducsNxlZFEUzq2C4BNxIEjJUg_wFIGL5DUkFJyMxMJr94kY6x8UthEhUFj9EoIiGc9Vp8KG3C6-NMksMz1QDY1ERZOCzOwySo64YwDOtCKcev9Am8BDqwmUnj3mrv6Cw"/>
+
+<div>
+
+<div class="text-sm font-body font-medium text-on-surface">Sipho Khumalo</div>
+
+</div>
+
+</div>
+
+<div>
+
+<span class="inline-flex items-center px-2 py-1 rounded bg-surface-bright text-on-background text-xs font-medium font-body border border-outline-variant/30">
+
+                                Shop Owner
+
+                            </span>
+
+<div class="text-[10px] text-on-surface-variant mt-1 uppercase tracking-wider">Management</div>
+
+</div>
+
+<div>
+
+<div class="text-sm font-body text-on-surface">s.khumalo@nexgen.net</div>
+
+<div class="text-xs font-label text-on-surface-variant">+27 11 555 0123</div>
+
+</div>
+
+<div>
+
+<span class="inline-flex items-center gap-1.5 text-xs font-medium text-surface-tint">
+
+<span class="w-1.5 h-1.5 rounded-full bg-surface-tint"></span>
+
+                                Active
+
+                            </span>
+
+</div>
+
+<div class="text-sm text-on-surface-variant font-body">Today, 09:41 AM</div>
+
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Edit Staff"><span class="material-symbols-outlined text-sm">edit</span></button>
+
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Change Role"><span class="material-symbols-outlined text-sm">manage_accounts</span></button>
+
+<button class="text-on-surface-variant hover:text-error transition-colors p-1" title="Disable Staff"><span class="material-symbols-outlined text-sm">block</span></button>
+
+</div>
+
+</div>
+
+<!-- Row 2 -->
+
+<div class="grid grid-cols-[minmax(200px,2fr)_1fr_minmax(150px,1.5fr)_1fr_1fr_100px] gap-4 px-6 py-4 items-center hover:bg-surface-variant/50 transition-colors border-b border-outline-variant/10 group">
+
+<div class="flex items-center gap-3">
+
+<img alt="Pieter van der Merwe" class="w-10 h-10 rounded-lg object-cover border border-outline-variant/30" data-alt="professional headshot of a male in a collared shirt against a dark modern background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSw_MKXLQbx73aazjDEUJXItPnNy7Hd7HS1XMqhpOC0__I6aBQOx0zloTUfHZLkJCtMHBaHpTlTZmIbsYmiDpPoqNUvgE829cJ9pvMjkiveV3sRhvNXmuDNJ-KyNv9qx7WR508Tvx4V_-MlFfwi-xV03drpmKwEY8aonXftZt9p7pUnXsBFOP5MWMpg4aYN6in9JuJCPM1ciyJKn8-4YpaqDu6W33YB30BgWR3DJnzkxg0ADyUy18TNln0V4kgQkA_8drJcgpLRg"/>
+
+<div>
+
+<div class="text-sm font-body font-medium text-on-surface">Pieter van der Merwe</div>
+
+</div>
+
+</div>
+
+<div>
+
+<span class="inline-flex items-center px-2 py-1 rounded text-on-surface-variant text-xs font-medium font-body border border-outline-variant/20">
+
+                                Sales Staff
+
+                            </span>
+
+<div class="text-[10px] text-on-surface-variant mt-1 uppercase tracking-wider">Front Desk</div>
+
+</div>
+
+<div>
+
+<div class="text-sm font-body text-on-surface">p.vandermerwe@nexgen.net</div>
+
+<div class="text-xs font-label text-on-surface-variant">+27 21 555 0456</div>
+
+</div>
+
+<div>
+
+<span class="inline-flex items-center gap-1.5 text-xs font-medium text-surface-tint">
+
+<span class="w-1.5 h-1.5 rounded-full bg-surface-tint"></span>
+
+                                Active
+
+                            </span>
+
+</div>
+
+<div class="text-sm text-on-surface-variant font-body">Yesterday, 14:22 PM</div>
+
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Edit Staff"><span class="material-symbols-outlined text-sm">edit</span></button>
+
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Change Role"><span class="material-symbols-outlined text-sm">manage_accounts</span></button>
+
+<button class="text-on-surface-variant hover:text-error transition-colors p-1" title="Disable Staff"><span class="material-symbols-outlined text-sm">block</span></button>
+
+</div>
+
+</div>
+
+<!-- Row 3 -->
+
+<div class="grid grid-cols-[minmax(200px,2fr)_1fr_minmax(150px,1.5fr)_1fr_1fr_100px] gap-4 px-6 py-4 items-center hover:bg-surface-variant/50 transition-colors border-b border-outline-variant/10 group">
+
+<div class="flex items-center gap-3">
+
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center text-on-surface font-headline font-semibold">
+
+                                LN
+
+                            </div>
+
+<div>
+
+<div class="text-sm font-body font-medium text-on-surface">Lerato Ndlovu</div>
+
+</div>
+
+</div>
+
+<div>
+
+<span class="inline-flex items-center px-2 py-1 rounded text-on-surface-variant text-xs font-medium font-body border border-outline-variant/20">
+
+                                Inventory Staff
+
+                            </span>
+
+<div class="text-[10px] text-on-surface-variant mt-1 uppercase tracking-wider">Warehouse</div>
+
+</div>
+
+<div>
+
+<div class="text-sm font-body text-on-surface">l.ndlovu@nexgen.net</div>
+
+<div class="text-xs font-label text-on-surface-variant">+27 31 555 0789</div>
+
+</div>
+
+<div>
+
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-bright text-on-surface-variant text-xs font-medium border border-outline-variant/30 gap-1">
+
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+
+                                Invited
+
+                            </span>
+
+</div>
+
+<div class="text-sm text-on-surface-variant font-body italic">Never</div>
+
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Resend Invite"><span class="material-symbols-outlined text-sm">forward_to_inbox</span></button>
+
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Edit Staff"><span class="material-symbols-outlined text-sm">edit</span></button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Pagination -->
+
+<div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant/20 flex items-center justify-between">
+
+<span class="text-xs text-on-surface-variant font-label">Showing 1 to 3 of 12 staff members</span>
+
+<div class="flex items-center gap-2">
+
+<button class="w-8 h-8 rounded bg-surface-container border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-surface-bright transition-colors disabled:opacity-50">
+
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+
+</button>
+
+<button class="w-8 h-8 rounded bg-surface-bright border border-outline-variant/50 flex items-center justify-center text-on-surface text-sm font-medium">1</button>
+
+<button class="w-8 h-8 rounded bg-surface-container border border-outline-variant/30 flex items-center justify-center text-on-surface hover:bg-surface-bright transition-colors text-sm font-medium">2</button>
+
+<button class="w-8 h-8 rounded bg-surface-container border border-outline-variant/30 flex items-center justify-center text-on-surface hover:bg-surface-bright transition-colors text-sm font-medium">3</button>
+
+<button class="w-8 h-8 rounded bg-surface-container border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-surface-bright transition-colors">
+
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+</body></html>
+
+
